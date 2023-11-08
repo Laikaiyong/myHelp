@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApplicationComponent  implements OnInit {
 
+  scholarships = [
+    "YTL Foundation Scholarship Programme",
+    "Malaysia International Scholarship"
+  ]
+
   constructor() { }
 
   ngOnInit() {}

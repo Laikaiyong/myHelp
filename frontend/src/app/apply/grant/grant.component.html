@@ -1,1 +1,45 @@
 <ion-searchbar class="p-5 pb-10 mt-30" color="light"></ion-searchbar>
+
+<div class="flex">
+  <ion-card class="w-[30vw] mx-4" *ngFor="let card of cards">
+    <ion-card-header>
+      <ion-card-title>{{ card.title }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content class="text-center justify-center align-middle">
+      <ion-img
+        [src]="card.image"
+        [alt]="card.title"
+        class="w-[25vw] mt-10 mb-10"
+      ></ion-img>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+<ion-title class="mt-8">Top Digital Grant</ion-title>
+<div class="ml-4 mt-4 flex whitespace-nowrap overflow-scroll">
+  <ion-card class="w-[30vw] lg:w-[20vw]" *ngFor="let grant of grants">
+    <ion-img class="w-[29.1vw] lg:w-[19.1vw]" [alt]="grant.title" [src]="grant.image" />
+    <ion-card-header>
+      <ion-card-title text-wrap>{{grant.title}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{grant.desc}}
+    </ion-card-content>
+  </ion-card>
+</div>
+
+<ion-title class="mt-8">Top Investment Grant</ion-title>
+<div class="ml-4 mt-4 flex whitespace-nowrap overflow-scroll">
+  <ion-card class="w-[30vw] lg:w-[20vw]" *ngFor="let grant of grants1">
+    <ion-img class="w-[29.1vw] lg:w-[19.1vw]" [alt]="grant.title" [src]="grant.image" />
+    <ion-card-header>
+      <ion-card-title text-wrap>{{grant.title}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{grant.desc}}
+    </ion-card-content>
+  </ion-card>
+</div>
