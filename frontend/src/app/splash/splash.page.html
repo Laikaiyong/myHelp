@@ -4,25 +4,29 @@
       class="bg-[url('../assets/circles.svg')] bg-no-repeat mt-4 w-full h-full bg-center flex justify-center"
     >
   </div> -->
-    <ion-img src="../assets/circles.svg" class="w-full h-full mt-4"></ion-img>
-    <ion-img
+    <ion-img src="../assets/splash.svg" class="w-screen h-[80vh] md:h-[70vh]"></ion-img>
+    <!-- <ion-img
       src="../assets/splash.svg"
-      class="w-9/12 md:w-6/12 lg:w-3/12 h-full absolute -top-56"
-    ></ion-img>
+      class="w-9/12 lg:w-5/12 mt-8 h-screen absolute -top-56"
+    ></ion-img> -->
   </div>
 
-  <ion-card
-    class="m-0 rounded-b-none pb-16 pt-4 rounded-t-[6%] px-1 absolute top-[29rem] w-full h-screen"
-  >
-    <ion-card-header class="text-center"
-      ><ion-card-title>Enhance your life with MYHelp</ion-card-title>
-    </ion-card-header>
-    <ion-card-content class="text-center">
-      Your all-in-one solution to a better quality of life
-    </ion-card-content>
-    <div class="p-4 flex flex-col space-y-4">
-      <ion-button>Create An Account</ion-button>
-      <ion-button fill="outline">Log In</ion-button>
-    </div>
-  </ion-card>
+  <ion-footer>
+    <ion-toolbar class="rounded-b-none rounded-t-[6%]">
+    <ion-card
+      class="m-0 pb-16 pt-4 px-1 w-full"
+    >
+      <ion-card-header class="text-center"
+        ><ion-card-title>Enhance your life with MYHelp</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="text-center">
+        Your all-in-one solution to a better quality of life
+      </ion-card-content>
+      <div class="p-4 flex flex-col space-y-4">
+        <ion-button color="secondary" shape="round" type="button" class="h-14" href="/signup">Create An Account</ion-button>
+        <ion-button color="secondary" shape="round" fill="outline" class="h-14" href="/login">Log In</ion-button>
+      </div>
+    </ion-card>
+  </ion-toolbar>
+  </ion-footer>
 </ion-app>

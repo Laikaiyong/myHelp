@@ -1,13 +1,53 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">login</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+  <ion-content [fullscreen]="true">
+    <ion-app>
+      <div class="h-36 w-full flex justify-center rounded-b-[16%] overflow-hidden">
+        <ion-img src="../assets/images/auth/login_banner.svg" class="w-screen object-cover"></ion-img>
+        <ion-text class="absolute mt-20 text-3xl font-bold text-white">MYHelp</ion-text>
+      </div>
+    
+      <ion-content>
+        <ion-title class="text-5xl mt-10">🔔<br><ion-text class="text-4xl">Welcome back!</ion-text> </ion-title>
+  
+        <ion-text class="ml-6">It's great to see you again</ion-text>
+
+        <!-- Email -->
+        <div class="w-full flex align-center m-10 space-x-10">
+          <ion-icon name="mail-outline" size="large" class="mt-8"></ion-icon>
+          <ion-input
+          class="w-[80vw] bg-transparent border-none"
+          label="Email"
+          labelPlacement="floating"
+          maxlength="100"
+          inputmode="email"
+          size="small"
+          errorText="Please enter a valid email"
+          type="email"
+          ></ion-input>
+        </div>
+  
+        <!-- Password -->
+        <div class="w-full flex align-center m-10 space-x-10">
+          <ion-icon name="lock-closed-outline" size="large" class="mt-8"></ion-icon>
+          <ion-input
+          class="w-[80vw] bg-transparent border-none"
+          label="Password"
+          labelPlacement="floating"
+          maxlength="100"
+          type="password"
+          size="small"
+          errorText="Please enter a valid password"
+          ></ion-input>
+        </div>
+  
+        <div class="p-4 flex flex-col space-y-4 mx-auto md:w-[70vw] lg:w-[50vw]">
+          <ion-button color="secondary" shape="round" type="submit" class="h-14" href="/tabs">Login</ion-button>
+          <ion-text class="text-center">Don't have an account?</ion-text>
+          <ion-button color="secondary" shape="round" fill="outline" class="h-14" href="/signup">Create an account</ion-button>
+        </div>
+      </ion-content>
+    </ion-app>
+    
+  </ion-content>
+  

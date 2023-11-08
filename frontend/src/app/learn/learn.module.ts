@@ -5,13 +5,17 @@ import { FormsModule } from '@angular/forms';
 import { LearnPage } from './learn.page';
 
 import { LearnPageRoutingModule } from './learn-routing.module';
+import { CoursesModule } from './courses/courses.module';
+import { AssessmentModule } from './assessment/assessment.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    LearnPageRoutingModule
+    LearnPageRoutingModule,
+    CoursesModule,
+    AssessmentModule
   ],
   declarations: [LearnPage]
 })

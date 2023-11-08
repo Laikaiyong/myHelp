@@ -1,15 +1,38 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Learn
+      Learn 📖
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon name="notifications-outline" class="mr-8 text-2xl"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
+  <ion-toolbar>
+  
+    <ion-segment
+    mode="md"
+    [(ngModel)]="selectedSegment"
+    value="Grant"
+    >
+    <ion-segment-button *ngFor="let item of segmentList; let i = index"
+      [value]="item"
+      (click)="_segmentSelected(i)"
+      ><ion-label>{{item}}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+</ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Learn</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content  class="ion-padding">
+  <div [ngSwitch]="selectedSegment">
+    <div *ngSwitchCase="'Courses'">
+        <app-courses></app-courses>
+    </div>
+    
+    <div *ngSwitchCase="'Assessment'">
+        <app-assessment></app-assessment>
+    </div>
+  </div>
 </ion-content>
+  
