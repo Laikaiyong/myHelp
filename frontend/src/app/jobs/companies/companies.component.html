@@ -1,3 +1,42 @@
-<p>
-  companies works!
-</p>
+<ion-searchbar class="p-5 pb-10 mt-30" color="light"></ion-searchbar>
+
+<ion-title>Suggested Categories</ion-title>
+<div class="ml-4 mt-4">
+  <ion-chip *ngFor="let filter of filters" class="mr-4 text-md">{{ filter }}</ion-chip>
+</div>
+
+<swiper-container slides-per-view="1" pagination="true">
+  <swiper-slide *ngFor="let slide of slides">
+    <ion-card>
+      <ion-img class="w-full object-cover" alt="A hand is holding a pile of cash picture" src="../assets/images/jobs/maxis_banner.svg" />
+  </ion-card>
+</swiper-slide>
+</swiper-container>
+
+<ion-title class="mt-8">Companies for You</ion-title>
+<div class="ml-4 mt-4 flex">
+  <ion-card *ngFor="let company of companies">
+    <img width="250" [alt]="company.title" [src]="company.image" />
+    <ion-card-header>
+      <ion-card-title text-wrap>{{company.title}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{company.desc}}
+    </ion-card-content>
+  </ion-card>
+</div>
+
+<ion-title class="mt-8">Popular Companies</ion-title>
+<div class="ml-4 mt-4 flex">
+  <ion-card *ngFor="let company of companies1">
+    <img width="250" [alt]="company.title" [src]="company.image" />
+    <ion-card-header>
+      <ion-card-title text-wrap>{{company.title}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{company.desc}}
+    </ion-card-content>
+  </ion-card>
+</div>

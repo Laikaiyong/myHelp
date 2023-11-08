@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApplicationComponent  implements OnInit {
 
+  jobs = [
+    {
+      title: "Senior Technical Support Associate",
+      company: "Asia Pacific University"
+    },
+    {
+      title: "Senior Technician Specialist",
+      company: "Bosch International"
+    }
+  ]
+
   constructor() { }
 
   ngOnInit() {}

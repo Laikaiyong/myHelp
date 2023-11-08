@@ -1,3 +1,89 @@
-<p>
-  listings works!
-</p>
+<ion-searchbar class="p-5 pb-10 mt-30" color="light"></ion-searchbar>
+
+<ion-title>Suggested Searches</ion-title>
+<div class="ml-4 mt-4">
+  <ion-chip *ngFor="let filter of filters" class="mr-4 text-md">{{ filter }}</ion-chip>
+</div>
+
+<ion-title class="mt-8">Based on Your Profile</ion-title>
+<div class="ml-4 mt-4 flex">
+  <ion-card *ngFor="let job of jobs">
+    <img width="250" [alt]="job.title" [src]="job.image" />
+    <ion-card-header>
+      <ion-card-title text-wrap>{{job.title}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{job.desc}}
+    </ion-card-content>
+  </ion-card>
+</div>
+
+<ion-card class="mt-10 flex items-center p-5 w-fit mx-auto">
+  <ion-img src="../assets/images/jobs/preference.svg" class="w-32"></ion-img>
+  
+  <ion-card-header>
+    <ion-card-title>Add your job preferences</ion-card-title>
+    <ion-card-subtitle>So that we can help you in your job search process</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-icon name="arrow-forward-circle" size="large" color="primary"></ion-icon>
+</ion-card>
+
+<ion-title class="mt-8">Jobs Where You Will Be An Excellent Match</ion-title>
+<div class="ml-4 mt-4 flex">
+  <ion-card *ngFor="let job of jobs">
+    <img width="250" [alt]="job.title" [src]="job.image" />
+    <ion-card-header>
+      <ion-card-title text-wrap>{{job.title}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{job.desc}}
+    </ion-card-content>
+  </ion-card>
+</div>
+
+<ion-card class="mt-10 flex items-center p-5 w-fit mx-auto">
+  <ion-img src="../assets/images/jobs/skills.svg" class="w-32"></ion-img>
+  
+  <ion-card-header>
+    <ion-card-title>Update your skills</ion-card-title>
+    <ion-card-subtitle>So that we can match you with your dream job</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-icon name="arrow-forward-circle" size="large" color="primary"></ion-icon>
+</ion-card>
+
+<ion-title class="mt-8">Hot Jobs</ion-title>
+<div class="ml-4 mt-4 flex">
+  <ion-card *ngFor="let job of jobs">
+    <img width="250" [alt]="job.title" [src]="job.image" />
+    <ion-card-header>
+      <ion-card-title text-wrap>{{job.title}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{job.desc}}
+    </ion-card-content>
+  </ion-card>
+</div>
+
+<ion-title class="mt-8">Treanding Job Categories</ion-title>
+<div class="flex flex-wrap ml-7 mt-5">
+  <ion-button fill="outline" *ngFor="let button of buttons" class="capitalize">
+    <ion-icon slot="start" color="primary" [name]="button.name"></ion-icon>
+    {{ button.text }}
+  </ion-button>
+</div>
+
+<ion-card class="mt-10 flex items-center p-5 w-fit mx-auto">
+  <ion-img src="../assets/images/jobs/test.svg" class="w-32"></ion-img>
+  
+  <ion-card-header>
+    <ion-card-title>Take our career test</ion-card-title>
+    <ion-card-subtitle>Have a look into your potentials through our personalised career test</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-icon name="arrow-forward-circle" size="large" color="primary"></ion-icon>
+</ion-card>
