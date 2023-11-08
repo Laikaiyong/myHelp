@@ -5,13 +5,19 @@ import { FormsModule } from '@angular/forms';
 import { JobsPage } from './jobs.page';
 
 import { JobsPageRoutingModule } from './jobs-routing.module';
+import { ListingsModule } from './listings/listings.module';
+import { CompaniesModule } from './companies/companies.module';
+import { ApplicationModule } from './application/application.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    JobsPageRoutingModule
+    JobsPageRoutingModule,
+    ListingsModule,
+    CompaniesModule,
+    ApplicationModule
   ],
   declarations: [JobsPage]
 })

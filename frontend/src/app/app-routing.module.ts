@@ -25,14 +25,6 @@ const routes: Routes = [
         loadComponent: () => import('./learn/course/course.page').then( m => m.CoursePage)
       },
       {
-        path: 'courses',
-        loadComponent: () => import('./learn/courses/courses.page').then( m => m.CoursesPage)
-      },
-      {
-        path: 'assessment',
-        loadComponent: () => import('./learn/assessment/assessment.page').then( m => m.AssessmentPage)
-      },
-      {
         path: 'training',
         loadComponent: () => import('./training/training.page').then( m => m.TrainingPage)
       },
@@ -43,18 +35,6 @@ const routes: Routes = [
       {
         path: 'trainingbrowse',
         loadComponent: () => import('./training/trainingbrowse/trainingbrowse.page').then( m => m.TrainingbrowsePage)
-      },
-      {
-        path: 'scholarship',
-        loadComponent: () => import('./apply/scholarship/scholarship.page').then( m => m.ScholarshipPage)
-      },
-      {
-        path: 'grant',
-        loadComponent: () => import('./apply/grant/grant.page').then( m => m.GrantPage)
-      },
-      {
-        path: 'application',
-        loadComponent: () => import('./apply/application/application.page').then( m => m.ApplicationPage)
       },
       {
         path: 'book',
@@ -71,18 +51,6 @@ const routes: Routes = [
       {
         path: 'delivery',
         loadComponent: () => import('./book/delivery/delivery.page').then( m => m.DeliveryPage)
-      },
-      {
-        path: 'listing',
-        loadComponent: () => import('./jobs/listing/listing.page').then( m => m.ListingPage)
-      },
-      {
-        path: 'companies',
-        loadComponent: () => import('./jobs/companies/companies.page').then( m => m.CompaniesPage)
-      },
-      {
-        path: 'application',
-        loadComponent: () => import('./jobs/application/application.page').then( m => m.ApplicationPage)
       },
       {
         path: 'faq',

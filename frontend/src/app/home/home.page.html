@@ -1,15 +1,168 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-toolbar>
+<ion-header class="h-60 rounded-b-[30px]">
+  <ion-card id="header" class="w-full h-full m-0 flex flex-col items-center justify-center rounded-b-[30px] rounded-t-none px-3">
+    
+    <ion-card-header class="block w-full mt-3">
+      <ion-card-subtitle class="flex items-center justify-between w-full" color="light">
+        <h1 class="normal-case">MYHelp</h1>
+        <ion-icon name="notifications-outline" size="large" color="light"></ion-icon>
+      </ion-card-subtitle>
+
+      <ion-card-title color="light" class="flex gap-3">
+        Good afternoon
+         <ion-img
+            src="../../assets/images/home/goodAfternoon.svg"
+            alt=""
+
+          ></ion-img>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="text-white text-left">
+        Great to see you again!
+    </ion-card-content>
+    
+
+    
+    <ion-img
+      src="../../assets/images/home/circles.svg"
+      alt=""
+      class="w-fit h-full absolute"
+    ></ion-img>
+
+
+    <ion-searchbar class="p-5 pb-10" color="light"></ion-searchbar>
+  </ion-card>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Home</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="" >
+  <!-- Training, Books, Generate, News Buttons -->
+  <div class="flex justify-around mt-7">
+    <ion-avatar class="w-fit">
+      <img alt="Silhouette of a person's head" src="../../assets/images/home/training.svg" class="w-fit"/>
+      <p class="w-full text-center">Training</p>
+    </ion-avatar>
+    <ion-avatar class="w-fit">
+      <img alt="Silhouette of a person's head" src="../../assets/images/home/books.svg" class="w-fit"/>
+      <p class="w-full text-center">Books</p>
+    </ion-avatar>
+    <ion-avatar class="w-fit">
+      <img alt="Silhouette of a person's head" src="../../assets/images/home/generate.svg" class="w-fit"/>
+      <p class="w-full text-center">Generate</p>
+    </ion-avatar>
+    <ion-avatar class="w-fit">
+      <img alt="Silhouette of a person's head" src="../../assets/images/home/news.svg" class="w-fit"/>
+      <p class="w-full text-center">News</p>
+    </ion-avatar>
+  </div>
+
+
+  <!-- Performance -->
+  <div class="mt-10 px-5 pt-2">
+    <h2>Your Performance So Far</h2>
+
+    <div class="flex">
+      <ion-card class="w-full">
+        <ion-card-header class="flex flex-col">
+          <ion-icon name="star-outline" color="warning"></ion-icon>
+          <ion-card-subtitle>TOTAL POINTS</ion-card-subtitle>
+          <ion-card-title class="text-sm">5000</ion-card-title>
+          <ion-icon name="information-circle-outline"></ion-icon>
+        </ion-card-header>
+      </ion-card>
+      <ion-card class="w-full">
+        <ion-card-header class="flex flex-col">
+          <ion-icon name="book-outline" color="warning"></ion-icon>
+          <ion-card-subtitle>TOTAL COURSES</ion-card-subtitle>
+          <ion-card-title class="text-sm">10</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </div>
+  </div>
+
+
+  <!-- Promotions -->
+  <div class="mt-10 px-5 pt-2">
+    <h2>Promotions and Incentives</h2>
+
+   <swiper-container slides-per-view="2" pagination="true">
+      <swiper-slide>
+        <ion-card class="ebelia w-full">
+          <ion-card-header >
+            <ion-button color="light" disabled="true" fill="outline" shape="round" class="font-bold rounded-full w-3/12 normal-case bg-opacity-10 bg-white">
+              eBelia
+            </ion-button>
+            <ion-card-title class="text-white text-left">Calling All Students</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="text-white text-left">
+            RM 200 will be given out to students aged 18-20
+          </ion-card-content>
+
+        </ion-card>
+        
+        <div class="w-full flex flex-col justify-start items-start font-semibold">
+          <p class="text-left w-full">eBelia Incentive for students</p>
+          <p class="cursor-pointer flex items-center text-rose-600" >
+            Claim Now&nbsp;<ion-icon name="arrow-forward-outline"></ion-icon>
+          </p>
+      </div>
+      </swiper-slide>
+      
+    </swiper-container>
+  </div>
+
+  <!-- Learn and Upskill -->
+  <ion-card class="mt-10 flex items-center p-5 w-fit mx-auto">
+    <ion-img src="../../assets/images/home/learn_upskill.svg" class="w-32"></ion-img>
+    
+    <ion-card-header>
+      <ion-card-title>Learn and upskill yourself</ion-card-title>
+      <ion-card-subtitle>Take a look at our courses and assessments to help you grow</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-icon name="arrow-forward-circle" size="large" color="primary"></ion-icon>
+  </ion-card>
+
+
+  <!-- Recent Application -->
+
+  <div class="mt-10 px-5 pt-2">
+    <h2>Recent Application</h2>
+
+    <ion-card class="px-2 py-1 border-2 border-solid border-slate-300">
+      <ion-card-header>
+        <div class="flex items-center py-2">
+          <ion-icon name="bookmark-outline" size="large"></ion-icon>
+          <ion-card-subtitle class="uppercase">Grant Application</ion-card-subtitle>
+        </div>
+        <div class="flex justify-between py-2">
+          <ion-card-title class="normal-case">Home4u Charity</ion-card-title>
+          <ion-badge slot="end" color="warning" class="px-2 py-0 text-lg text-white">Reviewing</ion-badge>
+        </div>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="px-2 py-1 border-2 border-solid border-slate-300">
+      <ion-card-header>
+        <div class="flex items-center py-2">
+          <ion-icon name="bookmark-outline" size="large"></ion-icon>
+          <ion-card-subtitle class="uppercase">Scholarship Application</ion-card-subtitle>
+        </div>
+        <div class="flex justify-between">
+          <ion-card-title class="normal-case">Maxis Scholarship</ion-card-title>
+          <ion-badge slot="end" color="warning" class="px-2 py-0 text-lg text-white">Reviewing</ion-badge>
+        </div>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="px-2 py-1 border-2 border-solid border-slate-300">
+      <ion-card-header>
+        <div class="flex items-center py-2">
+          <ion-icon name="bookmark-outline" size="large"></ion-icon>
+          <ion-card-subtitle class="uppercase">Job Application</ion-card-subtitle>
+        </div>
+        <div class="flex justify-between">
+          <ion-card-title class="normal-case">Digital Intern</ion-card-title>
+          <ion-badge slot="end" color="warning" class="px-2 py-0 text-lg text-white">Reviewing</ion-badge>
+        </div>
+      </ion-card-header>
+      <ion-card-content>Google</ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
