@@ -1,8 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Profile
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,4 +13,214 @@
       <ion-title size="large">Profile</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <!-- Profile Pic -->
+  <ion-card class="rounded-xl h-72">
+    <img
+      class="h-32 w-32 rounded-full absolute left-0 right-0 mx-auto top-12"
+      alt="Profile Wallpaper"
+      src="https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    />
+    <img
+      class="h-32 w-full"
+      alt="Profile Wallpaper"
+      src="https://images.unsplash.com/photo-1650954316166-c3361fefcc87?q=80&w=2160&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    />
+    <ion-card-header class="flex w-full items-center h-2/3 justify-center">
+      <ion-card-title>I am a great potato ball</ion-card-title>
+      <ion-card-subtitle>Technician at Giant Hypermarket</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card
+    class="bg-opacity-25 bg-rose-500 border-2 border-solid border-rose-500"
+  >
+    <ion-card-header class="flex flex-row justify-between gap-5">
+      <ion-icon name="trophy-outline" size="large" color="primary"></ion-icon>
+
+      <div>
+        <ion-card-title class="">You have earned 5,000 points</ion-card-title>
+        <ion-card-subtitle>
+          That makes employers looking into your way more because you are just
+          awesome
+        </ion-card-subtitle>
+      </div>
+    </ion-card-header>
+  </ion-card>
+
+  <div
+    class="px-9 py-3 bg-slate-200 space-x-5 rounded-lg mx-3 my-4 flex items-center"
+  >
+    <ion-icon name="briefcase-outline" size="large"></ion-icon>
+    <ion-toggle justify="space-between" class="w-full font-bold" mode="ios"
+      >I am open to jobs</ion-toggle
+    >
+  </div>
+
+  <!-- Introduction card -->
+  <ion-card>
+    <ion-card-header class="flex flex-row items-center space-x-3">
+      <ion-icon name="bookmark-outline" size="large"></ion-icon>
+      <ion-card-title>Introduction</ion-card-title>
+    </ion-card-header>
+
+    <hr class="border-b border-slate-400 mx-4" />
+    <ion-card-content>
+      Hello, I am a great potato ball, currently working as a technician at
+      Giant Hypermarket. I am passionate in helping people, especially when it
+      comes to fixing stuff. I like to explore the mechanisms of machines and
+      cars during my free time.
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Personal Info -->
+  <ion-card>
+    <ion-card-header class="flex flex-row items-center space-x-3">
+      <ion-icon name="person-outline" size="large"></ion-icon>
+      <ion-card-title>Personal Information</ion-card-title>
+    </ion-card-header>
+
+    <hr class="border-b border-slate-400 mx-4" />
+    <ion-card-content class="space-y-5">
+      <div>
+        <p class="uppercase">Date of Birth</p>
+        <p class="text-black">02/02/2002</p>
+      </div>
+      <div>
+        <p class="uppercase">Age</p>
+        <p class="text-black">21</p>
+      </div>
+      <div>
+        <p class="uppercase">Phone Number</p>
+        <p class="text-black">012-345 6789</p>
+      </div>
+      <div>
+        <p class="uppercase">Email Address</p>
+        <p class="text-black">{{"hi@email.com"}}</p>
+      </div>
+      <div>
+        <p class="uppercase">Gender</p>
+        <p class="text-black">Male</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Job Preferences -->
+  <ion-card>
+    <ion-card-header class="flex flex-row items-center space-x-3">
+      <ion-icon name="briefcase-outline" size="large"></ion-icon>
+      <ion-card-title>Job Preferences</ion-card-title>
+    </ion-card-header>
+
+    <hr class="border-b border-slate-400 mx-4" />
+    <ion-card-content class="space-x-3">
+      <ion-badge
+        color="undefined"
+        class="border border-slate-400 rounded-lg p-2"
+      >
+        Technician
+      </ion-badge>
+      <ion-badge
+        color="undefined"
+        class="border border-slate-400 rounded-lg p-2"
+      >
+        Engineer
+      </ion-badge>
+      <ion-badge
+        color="undefined"
+        class="border border-slate-400 rounded-lg p-2"
+      >
+        Technology
+      </ion-badge>
+      <ion-badge
+        color="undefined"
+        class="border border-slate-400 rounded-lg p-2"
+      >
+        Technical Support
+      </ion-badge>
+      <ion-badge
+        color="undefined"
+        class="border border-slate-400 rounded-lg p-2"
+      >
+        Telecommunications
+      </ion-badge>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Skills -->
+  <ion-card>
+    <ion-card-header class="flex flex-row items-center space-x-3">
+      <ion-icon name="briefcase-outline" size="large"></ion-icon>
+      <ion-card-title>Skills</ion-card-title>
+    </ion-card-header>
+
+    <hr class="border-b border-slate-400 mx-4" />
+    <ion-card-content class="space-x-3">
+      <ion-badge
+        color="undefined"
+        class="border border-slate-400 rounded-lg p-2"
+      >
+        Cabling
+      </ion-badge>
+      <ion-badge
+        color="undefined"
+        class="border border-slate-400 rounded-lg p-2"
+      >
+        Hardware Repair
+      </ion-badge>
+      <ion-badge
+        color="undefined"
+        class="border border-slate-400 rounded-lg p-2"
+      >
+        Technology
+      </ion-badge>
+      <ion-badge
+        color="undefined"
+        class="border border-slate-400 rounded-lg p-2"
+      >
+        Command Line (CLI)
+      </ion-badge>
+      <ion-badge
+        color="undefined"
+        class="border border-slate-400 rounded-lg p-2"
+      >
+        Networking
+      </ion-badge>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- FAQ and Contact Us -->
+  <div class="mt-10 px-5 py-2 flex justify-center">
+    <ion-card class="w-64 rounded-lg">
+      <ion-card-header class="space-y-5">
+        <ion-card-title>Having Questions?</ion-card-title>
+        <ion-card-subtitle>Clear your doubts here!</ion-card-subtitle>
+        <ion-img src="../../assets/images/home/faq.svg" class="w-32"></ion-img>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="w-64 rounded-lg">
+      <ion-card-header class="space-y-5">
+        <ion-card-title>Contact Us</ion-card-title>
+        <ion-card-subtitle>Talk to us and we will help you!</ion-card-subtitle>
+        <ion-img
+          src="../../assets/images/home/contactUs.svg"
+          class="w-32"
+        ></ion-img>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="w-64 rounded-lg">
+      <ion-card-header class="space-y-5">
+        <ion-card-title>Settings</ion-card-title>
+        <ion-card-subtitle>Adjust your system there</ion-card-subtitle>
+        <ion-img
+          src="../../assets/images/profile/settings.svg"
+          class="w-32"
+        ></ion-img>
+      </ion-card-header>
+    </ion-card>
+  </div>
+
+  <ion-button fill="outline" shape="round" class="w-full p-5">
+    Log Out
+  </ion-button>
 </ion-content>
