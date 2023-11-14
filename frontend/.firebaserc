@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "flutter-frenzy": {
+      "hosting": {
+        "app": [
+          "myhelp-malaysia"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "flutter-frenzy"
+  }
+}

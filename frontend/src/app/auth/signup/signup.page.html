@@ -4,7 +4,7 @@
   <ion-app>
     <div class="h-24 w-full flex justify-center rounded-b-[16%] overflow-hidden">
       <ion-img src="../assets/images/auth/signup_banner.svg" class="w-screen object-cover"></ion-img>
-      <ion-text class="absolute mt-10 text-3xl font-bold text-white">MYHelp</ion-text>
+      <ion-text class="absolute mt-10 text-3xl font-bold text-white left-1/2 transform -translate-x-1/2">MYHelp</ion-text>
     </div>
   
     <ion-content>
@@ -44,6 +44,7 @@
       <div class="w-full flex align-center m-10 space-x-10">
         <ion-icon name="mail-outline" size="large" class="mt-8"></ion-icon>
         <ion-input
+        [ngModel]="email"
         class="w-[80vw] bg-transparent border-none"
         label="Email"
         labelPlacement="floating"

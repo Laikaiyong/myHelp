@@ -12,6 +12,8 @@ import { IonicModule } from '@ionic/angular';
 })
 export class SignupPage implements OnInit {
 
+  email = "";
+
   constructor() { }
 
   ngOnInit() {

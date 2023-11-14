@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
+  role: string = "" ?? "b40";
+
   constructor() {}
 
 }
