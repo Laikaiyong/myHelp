@@ -17,7 +17,8 @@ export class AssessmentComponent  implements OnInit {
     {
       image: "../assets/images/assessment/cash-flow.svg",
       title: "Cash Flow Analysis",
-      desc: "Finance | 1 hours"
+      desc: "Finance | 1 hours",
+      path: "/tabs/learn/assessment/"
     },
     {
       image: "../assets/images/courses/machine-learning.svg",

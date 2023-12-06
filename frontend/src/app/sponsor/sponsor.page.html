@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Sponsor</ion-title>
+  </ion-toolbar>
+
+  <ion-segment
+  mode="md"
+  [(ngModel)]="selectedSegment"
+  value="Grant"
+  >
+  <ion-segment-button *ngFor="let item of segmentList; let i = index"
+    [value]="item"
+    (click)="_segmentSelected(i)"
+    ><ion-label>{{item}}</ion-label>
+  </ion-segment-button>
+</ion-segment>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div [ngSwitch]="selectedSegment">
+    <div *ngSwitchCase="'Initiatives'">
+        <app-initiatives></app-initiatives>
+    </div>
+    
+    <div *ngSwitchCase="'Packages'">
+        <app-packages></app-packages>
+    </div>
+    
+    <div *ngSwitchCase="'Sponsored'">
+        <app-sponsored></app-sponsored>
+    </div>
+  </div>
+</ion-content>

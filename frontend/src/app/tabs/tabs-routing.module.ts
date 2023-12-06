@@ -28,6 +28,14 @@ const routes: Routes = [
         loadChildren: () => import('../profile/profile.module').then( m => m.ProfilePageModule)
       },
       {
+        path: 'sponsor',
+        loadChildren: () => import('../sponsor/sponsor.module').then( m => m.SponsorPageModule)
+      },
+      {
+        path: 'performance',
+        loadChildren: () => import('../performance/performance.module').then( m => m.PerformancePageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'

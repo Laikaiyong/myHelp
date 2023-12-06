@@ -1,270 +1,572 @@
-<ion-header class="h-60 rounded-b-[30px]">
-  <ion-card id="header" class="w-full h-full m-0 flex flex-col items-center justify-center rounded-b-[30px] rounded-t-none px-3">
-    
-    <ion-card-header class="block w-full mt-3">
-      <ion-card-subtitle class="flex items-center justify-between w-full" color="light">
-        <h1 class="normal-case">MYHelp</h1>
-        <ion-icon name="notifications-outline" size="large" color="light"></ion-icon>
-      </ion-card-subtitle>
+<!-- B40 -->
+<div class="m-0 p-0 h-[100vh]" *ngIf="role === 'b40'">
 
-      <ion-card-title color="light" class="flex gap-3">
-        Good afternoon
-         <ion-img
-            src="../../assets/images/home/goodAfternoon.svg"
-            alt=""
-
-          ></ion-img>
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content class="text-white text-left">
-        Great to see you again!
-    </ion-card-content>
-    
-
-    
-    <ion-img
-      src="../../assets/images/home/circles.svg"
-      alt=""
-      class="w-fit h-full absolute"
-    ></ion-img>
-
-
-    <ion-searchbar class="p-5 pb-10" color="light"></ion-searchbar>
-  </ion-card>
-</ion-header>
-
-<ion-content class="" >
-  <!-- Training, Books, Generate, News Buttons -->
-  <div class="flex justify-around mt-7">
-    <ion-avatar class="w-fit">
-      <img alt="Silhouette of a person's head" src="../../assets/images/home/training.svg" class="w-fit"/>
-      <p class="w-full text-center">Training</p>
-    </ion-avatar>
-    <ion-avatar class="w-fit">
-      <img alt="Silhouette of a person's head" src="../../assets/images/home/books.svg" class="w-fit"/>
-      <p class="w-full text-center">Books</p>
-    </ion-avatar>
-    <ion-avatar class="w-fit">
-      <img alt="Silhouette of a person's head" src="../../assets/images/home/generate.svg" class="w-fit"/>
-      <p class="w-full text-center">Generate</p>
-    </ion-avatar>
-    <ion-avatar class="w-fit">
-      <img alt="Silhouette of a person's head" src="../../assets/images/home/news.svg" class="w-fit"/>
-      <p class="w-full text-center">News</p>
-    </ion-avatar>
-  </div>
-
-
-  <!-- Performance -->
-  <div class="mt-10 px-5 pt-2">
-    <h2>Your Performance So Far</h2>
-
-    <div class="flex">
-      <ion-card class="w-full">
-        <ion-card-header class="flex flex-col">
-          <ion-icon name="star-outline" color="warning"></ion-icon>
-          <ion-card-subtitle>TOTAL POINTS</ion-card-subtitle>
-          <ion-card-title class="text-sm">5000</ion-card-title>
-          <ion-icon name="information-circle-outline"></ion-icon>
+  <ion-header class="h-60 rounded-b-[30px]">
+    <ion-card id="header" class="w-full h-full m-0 flex flex-col items-center justify-center rounded-b-[30px] rounded-t-none px-3">
+      
+      <ion-card-header class="block w-full mt-3">
+        <ion-card-subtitle class="flex items-center justify-between w-full" color="light">
+          <h1 class="normal-case">MYHelp</h1>
+  
+          <ion-item class="w-[20vw]">
+            <ion-select #roleSelect label="Role" label-placement="stacked" [(ngModel)]="role" (ionChange)="onChange(roleSelect.value)">
+              <ion-select-option value="b40">B40</ion-select-option>
+              <ion-select-option value="company">Company</ion-select-option>
+              <ion-select-option value="government">Government</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-icon name="notifications-outline" size="large" color="light"></ion-icon>
+          <!-- <ion-toggle [(ngModel)]="themeToggle" (ionChange)="toggleChange($event)" justify="space-between"
+          ></ion-toggle> -->
+        </ion-card-subtitle>
+  
+        <ion-card-title color="light" class="flex gap-3">
+          Good afternoon
+           <ion-img
+              src="../../assets/images/home/goodAfternoon.svg"
+              alt=""
+  
+            ></ion-img>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="text-white text-left">
+          Great to see you again!
+      </ion-card-content>
+      
+  
+      
+      <ion-img
+        src="../../assets/images/home/circles.svg"
+        alt=""
+        class="w-fit h-full absolute"
+      ></ion-img>
+  
+  
+      <ion-searchbar class="p-5 pb-10" color="light"></ion-searchbar>
+    </ion-card>
+  </ion-header>
+  
+  <ion-content class="" >
+    <!-- Training, Books, Generate, News Buttons -->
+    <div class="flex justify-around mt-7 mb-10 pb-10 h-[10vh]">
+      <ion-avatar class="w-fit">
+        <img alt="Silhouette of a person's head" src="../../assets/images/home/training.svg" class="w-fit"/>
+        <p class="w-full text-center">Training</p>
+      </ion-avatar>
+      <ion-avatar class="w-fit">
+        <img alt="Silhouette of a person's head" src="../../assets/images/home/books.svg" class="w-fit"/>
+        <p class="w-full text-center">Books</p>
+      </ion-avatar>
+      <a href="/tabs/home/generate">
+        <ion-avatar class="w-fit">
+          <img alt="Silhouette of a person's head" src="../../assets/images/home/generate.svg" class="w-fit"/>
+          <p class="w-full text-center">Generate</p>
+        </ion-avatar>
+      </a>
+      <ion-avatar class="w-fit">
+        <img alt="Silhouette of a person's head" src="../../assets/images/home/news.svg" class="w-fit"/>
+        <p class="w-full text-center">News</p>
+      </ion-avatar>
+    </div>
+  
+  
+    <!-- Performance -->
+    <div class="mt-10 px-5 pt-2">
+      <h2>Your Performance So Far</h2>
+  
+      <div class="flex">
+        <ion-card class="w-full">
+          <ion-card-header class="flex flex-col">
+            <ion-icon name="star-outline" color="warning"></ion-icon>
+            <ion-card-subtitle>TOTAL POINTS</ion-card-subtitle>
+            <ion-card-title class="text-sm">5000</ion-card-title>
+            <ion-icon name="information-circle-outline"></ion-icon>
+          </ion-card-header>
+        </ion-card>
+        <ion-card class="w-full">
+          <ion-card-header class="flex flex-col">
+            <ion-icon name="book-outline" color="warning"></ion-icon>
+            <ion-card-subtitle>TOTAL COURSES</ion-card-subtitle>
+            <ion-card-title class="text-sm">10</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+      </div>
+    </div>
+  
+  
+    <!-- Promotions -->
+    <div class="mt-10 px-5 pt-2">
+      <h2>Promotions and Incentives</h2>
+  
+     <swiper-container slides-per-view="2" pagination="true">
+        <swiper-slide>
+          <ion-card class="ebelia w-full">
+            <ion-card-header >
+              <ion-button color="light" disabled="true" fill="outline" shape="round" class="font-bold rounded-full w-3/12 normal-case bg-opacity-10 bg-white">
+                eBelia
+              </ion-button>
+              <ion-card-title class="text-white text-left">Calling All Students</ion-card-title>
+            </ion-card-header>
+            <ion-card-content class="text-white text-left">
+              RM 200 will be given out to students aged 18-20
+            </ion-card-content>
+  
+          </ion-card>
+          
+          <div class="w-full flex flex-col justify-start items-start font-semibold">
+            <p class="text-left w-full">eBelia Incentive for students</p>
+            <p class="cursor-pointer flex items-center text-rose-600" >
+              Claim Now&nbsp;<ion-icon name="arrow-forward-outline"></ion-icon>
+            </p>
+        </div>
+        </swiper-slide>
+        
+      </swiper-container>
+    </div>
+  
+    <!-- Learn and Upskill -->
+    <ion-card class="mt-10 flex items-center p-5 w-fit mx-auto">
+      <ion-img src="../../assets/images/home/learn_upskill.svg" class="w-32"></ion-img>
+      
+      <ion-card-header>
+        <ion-card-title>Learn and upskill yourself</ion-card-title>
+        <ion-card-subtitle>Take a look at our courses and assessments to help you grow</ion-card-subtitle>
+      </ion-card-header>
+  
+      <ion-icon name="arrow-forward-circle" size="large" color="primary"></ion-icon>
+    </ion-card>
+  
+  
+    <!-- Recent Application -->
+  
+    <div class="mt-10 px-5 pt-2">
+      <h2>Recent Application</h2>
+  
+      <ion-card class="px-2 py-1 border-2 border-solid border-slate-300">
+        <ion-card-header>
+          <div class="flex items-center py-2">
+            <ion-icon name="bookmark-outline" size="large"></ion-icon>
+            <ion-card-subtitle class="uppercase">Grant Application</ion-card-subtitle>
+          </div>
+          <div class="flex justify-between py-2">
+            <ion-card-title class="normal-case">Home4u Charity</ion-card-title>
+            <ion-badge slot="end" color="warning" class="px-2 py-0 text-lg text-white">Reviewing</ion-badge>
+          </div>
         </ion-card-header>
       </ion-card>
-      <ion-card class="w-full">
-        <ion-card-header class="flex flex-col">
-          <ion-icon name="book-outline" color="warning"></ion-icon>
-          <ion-card-subtitle>TOTAL COURSES</ion-card-subtitle>
-          <ion-card-title class="text-sm">10</ion-card-title>
+      <ion-card class="px-2 py-1 border-2 border-solid border-slate-300">
+        <ion-card-header>
+          <div class="flex items-center py-2">
+            <ion-icon name="bookmark-outline" size="large"></ion-icon>
+            <ion-card-subtitle class="uppercase">Scholarship Application</ion-card-subtitle>
+          </div>
+          <div class="flex justify-between">
+            <ion-card-title class="normal-case">Maxis Scholarship</ion-card-title>
+            <ion-badge slot="end" color="warning" class="px-2 py-0 text-lg text-white">Reviewing</ion-badge>
+          </div>
+        </ion-card-header>
+      </ion-card>
+      <ion-card class="px-2 py-1 border-2 border-solid border-slate-300">
+        <ion-card-header>
+          <div class="flex items-center py-2">
+            <ion-icon name="bookmark-outline" size="large"></ion-icon>
+            <ion-card-subtitle class="uppercase">Job Application</ion-card-subtitle>
+          </div>
+          <div class="flex justify-between">
+            <ion-card-title class="normal-case">Digital Intern</ion-card-title>
+            <ion-badge slot="end" color="warning" class="px-2 py-0 text-lg text-white">Reviewing</ion-badge>
+          </div>
+        </ion-card-header>
+        <ion-card-content>Google</ion-card-content>
+      </ion-card>
+  
+      <ion-button fill="clear" shape="round">
+        See All Applications<ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-button>
+    </div>
+  
+    <!-- Recommended Jobs -->
+    <div class="mt-10 px-5 pt-2">
+      <h2>Recommended Jobs</h2>
+      
+      <swiper-container slides-per-view="2" pagination="true">
+        <swiper-slide>
+          <ion-card>
+            <img class="h-40 w-52" alt="Duolingo Picture" src="https://images.unsplash.com/photo-1679042346932-f1131ce3c31d?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            <ion-card-header>
+              <ion-card-title class="text-left">Technician</ion-card-title>
+              <ion-card-subtitle class="text-left">Duolingo</ion-card-subtitle>
+            </ion-card-header>
+        </ion-card>
+      </swiper-slide>
+        <swiper-slide>
+          <ion-card>
+            <img class="h-40 w-52" alt="A person holding iPhone picture" src="https://images.unsplash.com/photo-1632505084035-6430e808becc?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            <ion-card-header>
+              <ion-card-title class="text-left">Technician</ion-card-title>
+              <ion-card-subtitle class="text-left">Touch n' Go</ion-card-subtitle>
+            </ion-card-header>
+        </ion-card>
+      </swiper-slide>
+        <swiper-slide>
+          <ion-card>
+            <img class="h-40 w-52" alt="A building picture" src="https://images.unsplash.com/photo-1568294038989-ae90653d9558?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            <ion-card-header>
+              <ion-card-title class="text-left">Technician</ion-card-title>
+              <ion-card-subtitle class="text-left">Accenture</ion-card-subtitle>
+            </ion-card-header>
+        </ion-card>
+        </swiper-slide>
+      </swiper-container>
+       <ion-button fill="clear" shape="round">
+        See All Jobs<ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-button>
+    </div>
+  
+  
+    <!-- Recommended Books -->
+    <div class="mt-10 px-5 pt-2">
+      <h2>Recommended Books</h2>
+      
+      <swiper-container slides-per-view="2" pagination="true">
+        <swiper-slide>
+          <ion-card>
+            <ion-img class="h-40 w-full object-cover" alt="A hand is holding a pile of cash picture" src="https://images.unsplash.com/photo-1554768804-50c1e2b50a6e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            <ion-card-header>
+              <ion-card-title class="text-left">How to Money Guide</ion-card-title>
+              <ion-card-subtitle class="text-left">Finance</ion-card-subtitle>
+            </ion-card-header>
+        </ion-card>
+      </swiper-slide>
+        <swiper-slide>
+          <ion-card>
+            <ion-img class="h-40 w-full object-cover" alt="A Monkey Thinking picture" src="https://images.unsplash.com/photo-1522435229388-6f7a422cd95b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            <ion-card-header>
+              <ion-card-title class="text-left">How do Monkeys Think</ion-card-title>
+              <ion-card-subtitle class="text-left">Animals</ion-card-subtitle>
+            </ion-card-header>
+        </ion-card>
+      </swiper-slide>
+        <swiper-slide>
+          <ion-card>
+            <ion-img class="h-40 w-full object-cover" alt="A Person Sleeping on bed picture" src="https://images.unsplash.com/photo-1556750539-dc6305f4f248?q=80&w=2775&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            <ion-card-header>
+              <ion-card-title class="text-left">How to Sleep like A Boss</ion-card-title>
+              <ion-card-subtitle class="text-left">Lifestyle</ion-card-subtitle>
+            </ion-card-header>
+        </ion-card>
+        </swiper-slide>
+      </swiper-container>
+       <ion-button fill="clear" shape="round">
+        See All Books<ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-button>
+    </div>
+  
+  
+    <!-- FAQ and Contact Us -->
+    <div class="mt-10 px-5 py-2 flex justify-center">
+      <ion-card class="w-64 rounded-lg">
+        <ion-card-header class="space-y-5">
+          <ion-card-title>Having Questions?</ion-card-title>
+          <ion-card-subtitle>Clear your doubts here!</ion-card-subtitle>
+          <ion-img src="../../assets/images/home/faq.svg" class="w-32"></ion-img>
+        </ion-card-header>
+      </ion-card>
+      <ion-card class="w-64 rounded-lg">
+        <ion-card-header class="space-y-5">
+          <ion-card-title>Contact Us</ion-card-title>
+          <ion-card-subtitle>Talk to us and we will help you!</ion-card-subtitle>
+          <ion-img src="../../assets/images/home/contactUs.svg" class="w-32"></ion-img>
+        </ion-card-header>
+      </ion-card>
+          
+    </div>
+    <div class="mt-10 px-5 py-2 flex justify-center mb-80">
+      <ion-text>That’s all for now!</ion-text>
+    </div>
+  </ion-content>
+
+</div> 
+
+
+<!-- Gonvernment -->
+<div class="m-0 p-0 h-[100vh]" *ngIf="role === 'government'">
+
+  <ion-header class="h-60 rounded-b-[30px]">
+    <ion-card id="header" class="w-full h-full m-0 flex flex-col items-center justify-center rounded-b-[30px] rounded-t-none px-3">
+      
+      <ion-card-header class="block w-full mt-3">
+        <ion-card-subtitle class="flex items-center justify-between w-full" color="light">
+          <h1 class="normal-case">Welcome back, Admin</h1>
+  
+          <ion-item class="w-[20vw]">
+            <ion-select #roleSelect label="Role" label-placement="stacked" [(ngModel)]="role" (ionChange)="onChange(roleSelect.value)">
+              <ion-select-option value="b40">B40</ion-select-option>
+              <ion-select-option value="company">Company</ion-select-option>
+              <ion-select-option value="government">Government</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-icon name="notifications-outline" size="large" color="light"></ion-icon>
+          <!-- <ion-toggle [(ngModel)]="themeToggle" (ionChange)="toggleChange($event)" justify="space-between"
+          ></ion-toggle> -->
+        </ion-card-subtitle>
+  
+        <ion-card-title color="light" class="flex gap-3">
+          Great to see you again!
+        </ion-card-title>
+      </ion-card-header>
+      
+      <ion-img
+        src="../../assets/images/home/circles.svg"
+        alt=""
+        class="w-fit h-full absolute"
+      ></ion-img>
+  
+  
+      <ion-searchbar class="p-5 pb-10" color="light"></ion-searchbar>
+    </ion-card>
+  </ion-header>
+  
+  <ion-content class="" >
+    <!-- Sponsor Initiatives -->
+    <div class="mt-10 px-5 pt-2">
+      <h2>Recent Sponsorship Initatives</h2>
+  
+      <swiper-container slides-per-view="2" pagination="true">
+        <swiper-slide *ngFor="let sponsor of sponsorships">
+          <ion-card>
+            <img class="h-40 w-52" [alt]="sponsor.title" [src]="sponsor.image" />
+            <ion-card-header>
+              <ion-card-title class="text-left">{{sponsor.title}}</ion-card-title>
+              <ion-card-subtitle class="text-left">{{sponsor.subtitle}}</ion-card-subtitle>
+            </ion-card-header>
+        </ion-card>
+      </swiper-slide>
+      </swiper-container>
+       <ion-button fill="clear" shape="round">
+        See All Sponsor Initiatives<ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-button>
+    </div>
+    
+    <!-- Sponsorship Leaderboard -->
+    <div class="mt-10 px-5 pt-2">
+      <h2>Sponsorship Leaderboard</h2>
+
+      <ion-list inset="true">
+        <ion-item *ngFor="let rank of ranks">
+          <ion-button class="px-5 text-lg py-3" shape="round" [color]="rank.color">{{ rank.badge }}</ion-button>
+          <ion-label>
+            <ion-grid>
+                <ion-row>
+                  <ion-col offset="4" offset-md="4" offset-lg="2">{{rank.title}}</ion-col>
+                  <ion-col offset="4" offset-md="4" offset-lg="2">{{rank.subtitle}}</ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-label>
+        </ion-item>
+      </ion-list>
+
+     
+      <ion-button fill="clear" shape="round" href="/tabs/sponsor/leaderboard">
+        See Full Sponsorship Leaderboard<ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-button>
+    </div>
+    
+    <!-- FAQ and Contact Us -->
+    <div class="mt-10 px-5 py-2 flex justify-center">
+      <ion-card class="w-64 rounded-lg">
+        <ion-card-header class="space-y-5">
+          <ion-card-title>Having Questions?</ion-card-title>
+          <ion-card-subtitle>Clear your doubts here!</ion-card-subtitle>
+          <ion-img src="../../assets/images/home/faq.svg" class="w-32"></ion-img>
+        </ion-card-header>
+      </ion-card>
+      <ion-card class="w-64 rounded-lg">
+        <ion-card-header class="space-y-5">
+          <ion-card-title>Contact Us</ion-card-title>
+          <ion-card-subtitle>Talk to us and we will help you!</ion-card-subtitle>
+          <ion-img src="../../assets/images/home/contactUs.svg" class="w-32"></ion-img>
         </ion-card-header>
       </ion-card>
     </div>
-  </div>
 
+    <div class="mt-10 px-5 py-2 flex justify-center mb-80">
+      <ion-text>That’s all for now!</ion-text>
+    </div>
+  </ion-content>
 
-  <!-- Promotions -->
-  <div class="mt-10 px-5 pt-2">
-    <h2>Promotions and Incentives</h2>
+</div>
 
-   <swiper-container slides-per-view="2" pagination="true">
-      <swiper-slide>
-        <ion-card class="ebelia w-full">
-          <ion-card-header >
-            <ion-button color="light" disabled="true" fill="outline" shape="round" class="font-bold rounded-full w-3/12 normal-case bg-opacity-10 bg-white">
-              eBelia
-            </ion-button>
-            <ion-card-title class="text-white text-left">Calling All Students</ion-card-title>
-          </ion-card-header>
-          <ion-card-content class="text-white text-left">
-            RM 200 will be given out to students aged 18-20
-          </ion-card-content>
+<!-- Company -->
+<div class="m-0 p-0 h-[100vh]" *ngIf="role === 'company'">
 
-        </ion-card>
-        
-        <div class="w-full flex flex-col justify-start items-start font-semibold">
-          <p class="text-left w-full">eBelia Incentive for students</p>
-          <p class="cursor-pointer flex items-center text-rose-600" >
-            Claim Now&nbsp;<ion-icon name="arrow-forward-outline"></ion-icon>
-          </p>
-      </div>
-      </swiper-slide>
+  <ion-header class="h-60 rounded-b-[30px]">
+    <ion-card id="header" class="w-full h-full m-0 flex flex-col items-center justify-center rounded-b-[30px] rounded-t-none px-3">
       
-    </swiper-container>
-  </div>
-
-  <!-- Learn and Upskill -->
-  <ion-card class="mt-10 flex items-center p-5 w-fit mx-auto">
-    <ion-img src="../../assets/images/home/learn_upskill.svg" class="w-32"></ion-img>
-    
-    <ion-card-header>
-      <ion-card-title>Learn and upskill yourself</ion-card-title>
-      <ion-card-subtitle>Take a look at our courses and assessments to help you grow</ion-card-subtitle>
-    </ion-card-header>
-
-    <ion-icon name="arrow-forward-circle" size="large" color="primary"></ion-icon>
-  </ion-card>
-
-
-  <!-- Recent Application -->
-
-  <div class="mt-10 px-5 pt-2">
-    <h2>Recent Application</h2>
-
-    <ion-card class="px-2 py-1 border-2 border-solid border-slate-300">
-      <ion-card-header>
-        <div class="flex items-center py-2">
-          <ion-icon name="bookmark-outline" size="large"></ion-icon>
-          <ion-card-subtitle class="uppercase">Grant Application</ion-card-subtitle>
-        </div>
-        <div class="flex justify-between py-2">
-          <ion-card-title class="normal-case">Home4u Charity</ion-card-title>
-          <ion-badge slot="end" color="warning" class="px-2 py-0 text-lg text-white">Reviewing</ion-badge>
-        </div>
+      <ion-card-header class="block w-full mt-3">
+        <ion-card-subtitle class="flex items-center justify-between w-full" color="light">
+          <h1 class="normal-case">Welcome back, Maxis</h1>
+  
+          <ion-item class="w-[20vw]">
+            <ion-select #roleSelect label="Role" label-placement="stacked" [(ngModel)]="role" (ionChange)="onChange(roleSelect.value)">
+              <ion-select-option value="b40">B40</ion-select-option>
+              <ion-select-option value="company">Company</ion-select-option>
+              <ion-select-option value="government">Government</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-icon name="notifications-outline" size="large" color="light"></ion-icon>
+          <!-- <ion-toggle [(ngModel)]="themeToggle" (ionChange)="toggleChange($event)" justify="space-between"
+          ></ion-toggle> -->
+        </ion-card-subtitle>
+  
+        <ion-card-title color="light" class="flex gap-3">
+          Great to see you again!
+        </ion-card-title>
       </ion-card-header>
+      
+  
+      
+      <ion-img
+        src="../../assets/images/home/circles.svg"
+        alt=""
+        class="w-fit h-full absolute"
+      ></ion-img>
+  
+  
+      <ion-searchbar class="p-5 pb-10" color="light"></ion-searchbar>
     </ion-card>
-    <ion-card class="px-2 py-1 border-2 border-solid border-slate-300">
-      <ion-card-header>
-        <div class="flex items-center py-2">
-          <ion-icon name="bookmark-outline" size="large"></ion-icon>
-          <ion-card-subtitle class="uppercase">Scholarship Application</ion-card-subtitle>
-        </div>
-        <div class="flex justify-between">
-          <ion-card-title class="normal-case">Maxis Scholarship</ion-card-title>
-          <ion-badge slot="end" color="warning" class="px-2 py-0 text-lg text-white">Reviewing</ion-badge>
-        </div>
-      </ion-card-header>
-    </ion-card>
-    <ion-card class="px-2 py-1 border-2 border-solid border-slate-300">
-      <ion-card-header>
-        <div class="flex items-center py-2">
-          <ion-icon name="bookmark-outline" size="large"></ion-icon>
-          <ion-card-subtitle class="uppercase">Job Application</ion-card-subtitle>
-        </div>
-        <div class="flex justify-between">
-          <ion-card-title class="normal-case">Digital Intern</ion-card-title>
-          <ion-badge slot="end" color="warning" class="px-2 py-0 text-lg text-white">Reviewing</ion-badge>
-        </div>
-      </ion-card-header>
-      <ion-card-content>Google</ion-card-content>
-    </ion-card>
-
-    <ion-button fill="clear" shape="round">
-      See All Applications<ion-icon name="arrow-forward-outline"></ion-icon>
-    </ion-button>
-  </div>
-
-  <!-- Recommended Jobs -->
-  <div class="mt-10 px-5 pt-2">
-    <h2>Recommended Jobs</h2>
-    
-    <swiper-container slides-per-view="2" pagination="true">
-      <swiper-slide>
-        <ion-card>
-          <img class="h-40 w-52" alt="Duolingo Picture" src="https://images.unsplash.com/photo-1679042346932-f1131ce3c31d?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-          <ion-card-header>
-            <ion-card-title class="text-left">Technician</ion-card-title>
-            <ion-card-subtitle class="text-left">Duolingo</ion-card-subtitle>
-          </ion-card-header>
-      </ion-card>
-    </swiper-slide>
-      <swiper-slide>
-        <ion-card>
-          <img class="h-40 w-52" alt="A person holding iPhone picture" src="https://images.unsplash.com/photo-1632505084035-6430e808becc?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-          <ion-card-header>
-            <ion-card-title class="text-left">Technician</ion-card-title>
-            <ion-card-subtitle class="text-left">Touch n' Go</ion-card-subtitle>
-          </ion-card-header>
-      </ion-card>
-    </swiper-slide>
-      <swiper-slide>
-        <ion-card>
-          <img class="h-40 w-52" alt="A building picture" src="https://images.unsplash.com/photo-1568294038989-ae90653d9558?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-          <ion-card-header>
-            <ion-card-title class="text-left">Technician</ion-card-title>
-            <ion-card-subtitle class="text-left">Accenture</ion-card-subtitle>
-          </ion-card-header>
-      </ion-card>
+  </ion-header>
+  
+  <ion-content class="" >
+    <!-- Performance -->
+    <div class="mt-10 px-5 pt-2">
+      <h2>Your Performance So Far</h2>
+  
+      <div class="flex flex-wrap">
+        <ion-card class="w-[40vw] flex flex-col" *ngFor="let perf of companyPerformances">
+          <ion-row>
+            <ion-col col-2 class="flex align-middle justify-center">
+              <ion-icon [name]='perf.icon'  class="flex align-middle items-center justify-center text-center text-3xl mt-5" color="warning"></ion-icon>
+            </ion-col>
+            <ion-col col-8 class="mt-2 p-4">
+                <ion-card-subtitle>{{perf.title}}</ion-card-subtitle>
+              <ion-card-title class="text-sm">{{perf.subtitle}}</ion-card-title>
+            </ion-col>
+        </ion-row>
+        </ion-card>
+      </div>
+    </div>
+  
+  
+    <!-- Sponsorship -->
+    <div class="mt-10 px-5 pt-2">
+      <h2>Searching for Sponsorships</h2>
+      
+      <swiper-container slides-per-view="2" pagination="true">
+        <swiper-slide *ngFor="let sponsor of sponsorships">
+          <ion-card>
+            <img class="h-40 w-52" [alt]="sponsor.title" [src]="sponsor.image" />
+            <ion-card-header>
+              <ion-card-title class="text-left">{{sponsor.title}}</ion-card-title>
+              <ion-card-subtitle class="text-left">{{sponsor.subtitle}}</ion-card-subtitle>
+            </ion-card-header>
+        </ion-card>
       </swiper-slide>
-    </swiper-container>
-     <ion-button fill="clear" shape="round">
-      See All Jobs<ion-icon name="arrow-forward-outline"></ion-icon>
-    </ion-button>
-  </div>
-
-
-  <!-- Recommended Books -->
-  <div class="mt-10 px-5 pt-2">
-    <h2>Recommended Books</h2>
-    
-    <swiper-container slides-per-view="2" pagination="true">
-      <swiper-slide>
-        <ion-card>
-          <ion-img class="h-40 w-full object-cover" alt="A hand is holding a pile of cash picture" src="https://images.unsplash.com/photo-1554768804-50c1e2b50a6e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-          <ion-card-header>
-            <ion-card-title class="text-left">How to Money Guide</ion-card-title>
-            <ion-card-subtitle class="text-left">Finance</ion-card-subtitle>
-          </ion-card-header>
+      </swiper-container>
+       <ion-button fill="clear" shape="round">
+        See All Sponsorships<ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-button>
+    </div>
+  
+    <!-- Recent Application -->
+    <div class="mt-10 px-5 pt-2">
+      <h2>Recent Sponsored Initiatives</h2>
+  
+      <ion-card *ngFor="let initiative of initiatives" class="px-2 py-1 border-2 border-solid border-slate-300">
+        <ion-card-header>
+          <div class="flex items-center py-2">
+            <ion-icon name="bookmark-outline" size="large"></ion-icon>
+            <ion-card-subtitle class="uppercase">SPONSORSHIP</ion-card-subtitle>
+          </div>
+          <div class="flex justify-between py-2">
+            <ion-card-title class="normal-case">{{initiative.title}}</ion-card-title>
+            <ion-badge slot="end" color="warning" class="px-2 py-0 text-lg text-white">+100 points</ion-badge>
+          </div>
+        </ion-card-header>
       </ion-card>
-    </swiper-slide>
-      <swiper-slide>
-        <ion-card>
-          <ion-img class="h-40 w-full object-cover" alt="A Monkey Thinking picture" src="https://images.unsplash.com/photo-1522435229388-6f7a422cd95b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-          <ion-card-header>
-            <ion-card-title class="text-left">How do Monkeys Think</ion-card-title>
-            <ion-card-subtitle class="text-left">Animals</ion-card-subtitle>
-          </ion-card-header>
+     
+      <ion-button fill="clear" shape="round">
+        See all Sponsored Initiatives<ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-button>
+    </div>
+  
+    <!-- Recent Application -->
+    <div class="mt-10 px-5 pt-2">
+      <h2>Recent Jobs Posted</h2>
+  
+      <ion-card *ngFor="let job of jobs" class="px-2 py-1 border-2 border-solid border-slate-300">
+        <ion-card-header>
+          <div class="flex items-center py-2">
+            <ion-icon name="briefcase-outline" size="large"></ion-icon>
+            <ion-card-subtitle class="ml-2 uppercase">JOB POSTING</ion-card-subtitle>
+          </div>
+          <div class="flex justify-between py-2">
+            <ion-card-title class="normal-case">{{job.title}}</ion-card-title>
+            <ion-badge slot="end" color="success" class="px-2 py-0 text-lg text-white">OPEN</ion-badge>
+          </div>
+        </ion-card-header>
       </ion-card>
-    </swiper-slide>
-      <swiper-slide>
-        <ion-card>
-          <ion-img class="h-40 w-full object-cover" alt="A Person Sleeping on bed picture" src="https://images.unsplash.com/photo-1556750539-dc6305f4f248?q=80&w=2775&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-          <ion-card-header>
-            <ion-card-title class="text-left">How to Sleep like A Boss</ion-card-title>
-            <ion-card-subtitle class="text-left">Lifestyle</ion-card-subtitle>
-          </ion-card-header>
+     
+      <ion-button fill="clear" shape="round">
+        See all jobs posted<ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-button>
+    </div>
+  
+    <!-- Sponsorship Leaderboard -->
+    <div class="mt-10 px-5 pt-2">
+      <h2>Sponsorship Leaderboard</h2>
+
+      <ion-list inset="true">
+        <ion-item *ngFor="let rank of ranks">
+          <ion-button class="px-5 text-lg py-3" shape="round" [color]="rank.color">{{ rank.badge }}</ion-button>
+          <ion-label>
+            <ion-grid>
+                <ion-row>
+                  <ion-col offset="4" offset-md="4" offset-lg="2">{{rank.title}}</ion-col>
+                  <ion-col offset="4" offset-md="4" offset-lg="2">{{rank.subtitle}}</ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-label>
+        </ion-item>
+      </ion-list>
+
+     
+      <ion-button fill="clear" shape="round" href="/tabs/sponsor/leaderboard">
+        See Full Sponsorship Leaderboard<ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-button>
+    </div>
+
+    <!-- FAQ and Contact Us -->
+    <div class="mt-10 px-5 py-2 flex justify-center">
+      <ion-card class="w-64 rounded-lg">
+        <ion-card-header class="space-y-5">
+          <ion-card-title>Having Questions?</ion-card-title>
+          <ion-card-subtitle>Clear your doubts here!</ion-card-subtitle>
+          <ion-img src="../../assets/images/home/faq.svg" class="w-32"></ion-img>
+        </ion-card-header>
       </ion-card>
-      </swiper-slide>
-    </swiper-container>
-     <ion-button fill="clear" shape="round">
-      See All Books<ion-icon name="arrow-forward-outline"></ion-icon>
-    </ion-button>
-  </div>
+      <ion-card class="w-64 rounded-lg">
+        <ion-card-header class="space-y-5">
+          <ion-card-title>Contact Us</ion-card-title>
+          <ion-card-subtitle>Talk to us and we will help you!</ion-card-subtitle>
+          <ion-img src="../../assets/images/home/contactUs.svg" class="w-32"></ion-img>
+        </ion-card-header>
+      </ion-card>
+    </div>
 
+    <div class="mt-10 px-5 py-2 flex justify-center mb-80">
+      <ion-text>That’s all for now!</ion-text>
+    </div>
+  </ion-content>
 
-  <!-- FAQ and Contact Us -->
-  <div class="mt-10 px-5 py-2 flex justify-center">
-    <ion-card class="w-64 rounded-lg">
-      <ion-card-header class="space-y-5">
-        <ion-card-title>Having Questions?</ion-card-title>
-        <ion-card-subtitle>Clear your doubts here!</ion-card-subtitle>
-        <ion-img src="../../assets/images/home/faq.svg" class="w-32"></ion-img>
-      </ion-card-header>
-    </ion-card>
-    <ion-card class="w-64 rounded-lg">
-      <ion-card-header class="space-y-5">
-        <ion-card-title>Contact Us</ion-card-title>
-        <ion-card-subtitle>Talk to us and we will help you!</ion-card-subtitle>
-        <ion-img src="../../assets/images/home/contactUs.svg" class="w-32"></ion-img>
-      </ion-card-header>
-    </ion-card>
-        
-  </div>
-</ion-content>
-
+</div>

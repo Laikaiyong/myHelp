@@ -1,0 +1,18 @@
+<ion-searchbar class="p-5 pb-10 mt-30" color="light"></ion-searchbar>
+
+<div class="mt-10 px-5 pt-2">
+  <h2>Recent Sponsored Initiatives</h2>
+
+  <ion-card class="px-2 py-1 border-2 border-solid border-slate-300" *ngFor="let scholarship of scholarships">
+    <ion-card-header>
+      <div class="flex items-center py-2">
+        <ion-icon name="bookmark-outline" size="large"></ion-icon>
+        <ion-card-subtitle class="uppercase">Sponsorship</ion-card-subtitle>
+      </div>
+      <div class="flex justify-between">
+        <ion-card-title class="normal-case">{{ scholarship }}</ion-card-title>
+        <ion-badge slot="end" color="warning" class="px-2 py-0 text-lg text-white">+ 100 points</ion-badge>
+      </div>
+    </ion-card-header>
+  </ion-card>
+</div>

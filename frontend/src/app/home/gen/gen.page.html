@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="generatedText !== ''">
+  <h3>Generated Text:</h3>
+   <div *ngFor="let text of generatedText">
+    <p>{{ text }}</p>
+  </div>
+</div>
+</ion-content>

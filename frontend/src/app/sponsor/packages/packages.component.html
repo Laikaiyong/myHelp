@@ -1,0 +1,197 @@
+<ion-card
+    class="bg-opacity-25 bg-rose-500 border-2 border-solid border-rose-500"
+  >
+    <ion-card-header class="flex flex-row justify-between gap-5">
+      <ion-icon name="trophy-outline" size="large" color="primary"></ion-icon>
+
+      <div>
+        <ion-card-title class="">Gain more perks and recognition</ion-card-title>
+        <ion-card-subtitle>
+          Through sponsoring us for our dedicated initiatives
+        </ion-card-subtitle>
+      </div>
+    </ion-card-header>
+  </ion-card>
+
+  <!-- <div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>RM 15,000</ion-card-title>
+      <ion-card-subtitle>Empowerment Partner</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item lines="none">
+          <ion-thumbnail slot="start">
+            <ion-icon name="checkbox-outline" size="big" color="primary"></ion-icon>
+          </ion-thumbnail>
+          <ion-label class="ion-text-wrap">Recognition as a Gold Sponsor with a featured
+            corporate profile on our platform</ion-label>
+        </ion-item>
+  
+        <ion-item lines="none">
+          <ion-thumbnail slot="start">
+            <ion-icon name="checkbox-outline" size="big" color="primary"></ion-icon>
+          </ion-thumbnail>
+          <ion-label class="ion-text-wrap">Keynote speaking opportunity at our annual
+            Empowerment Summit</ion-label>
+        </ion-item>
+  
+        <ion-item lines="none">
+          <ion-thumbnail slot="start">
+            <ion-icon name="checkbox-outline" size="big" color="primary"></ion-icon>
+          </ion-thumbnail>
+          <ion-label class="ion-text-wrap">Customized impact assessment reports</ion-label>
+        </ion-item>
+  
+        <ion-item lines="none">
+          <ion-thumbnail slot="start">
+            <ion-icon name="checkbox-outline" size="big" color="primary"></ion-icon>
+          </ion-thumbnail>
+          <ion-label class="ion-text-wrap">Eligibility for a dedicated scholarship program under
+             your corporate name</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-button  fill="solid" shape="round" color="secondary" class="w-full pt-3">
+        <p class="font-bold py-5">Sponsor</ion-button>
+    </ion-card-content>
+  </ion-card>
+  </div>
+
+  <div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>RM 10,000</ion-card-title>
+      <ion-card-subtitle>Career Catalyst</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item lines="none">
+          <ion-thumbnail slot="start">
+            <ion-icon name="checkbox-outline" size="small" color="primary"></ion-icon>
+          </ion-thumbnail>
+          <ion-label class="ion-text-wrap">Recognition as a Silver Sponsor with
+             your logo displayed prominently on our 
+             website and marketing materials</ion-label>
+        </ion-item>
+  
+        <ion-item lines="none">
+          <ion-thumbnail slot="start">
+            <ion-icon name="checkbox-outline" size="small" color="primary"></ion-icon>
+          </ion-thumbnail>
+          <ion-label class="ion-text-wrap">Featured articles and interviews in our
+            quarterly newsletter</ion-label>
+        </ion-item>
+  
+        <ion-item lines="none">
+          <ion-thumbnail slot="start">
+            <ion-icon name="checkbox-outline" size="small" color="primary"></ion-icon>
+          </ion-thumbnail>
+          <ion-label class="ion-text-wrap">Customized impact assessment reports</ion-label>
+        </ion-item>
+  
+        <ion-item lines="none">
+          <ion-thumbnail slot="start">
+            <ion-icon name="checkbox-outline" class="text-2xl mt-4" color="primary"></ion-icon>
+          </ion-thumbnail>
+          <ion-label class="ion-text-wrap">Priority access to recruitment opportunities</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-button  fill="solid" shape="round" color="secondary" class="w-full pt-3">
+        <p class="font-bold py-5">Sponsor</ion-button>
+    </ion-card-content>
+  </ion-card>
+  </div>
+
+  <div>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>RM 5,000</ion-card-title>
+        <ion-card-subtitle>Skills Starter</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item lines="none">
+            <ion-thumbnail slot="start">
+              <ion-icon name="checkbox-outline" size="small" color="primary"></ion-icon>
+            </ion-thumbnail>
+            <ion-label class="ion-text-wrap">Recognition as a Bronze Sponsor on our platform and
+              promotional materials</ion-label>
+          </ion-item>
+    
+          <ion-item lines="none">
+            <ion-thumbnail slot="start">
+              <ion-icon name="checkbox-outline" size="small" color="primary"></ion-icon>
+            </ion-thumbnail>
+            <ion-label class="ion-text-wrap">FLogo placement in newsletters and social media</ion-label>
+          </ion-item>
+    
+          <ion-item lines="none">
+            <ion-thumbnail slot="start">
+              <ion-icon name="checkbox-outline" size="small" color="primary"></ion-icon>
+            </ion-thumbnail>
+            <ion-label class="ion-text-wrap">Exclusive virtual networking event with B40
+              beneficiaries and sponsors</ion-label>
+          </ion-item>
+    
+          <ion-item lines="none">
+            <ion-thumbnail slot="start">
+              <ion-icon name="checkbox-outline" size="small" color="primary"></ion-icon>
+            </ion-thumbnail>
+            <ion-label class="ion-text-wrap">Quarterly progress reports and success stories</ion-label>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-thumbnail slot="start">
+              <ion-icon name="checkbox-outline" size="small" color="primary"></ion-icon>
+            </ion-thumbnail>
+            <ion-label class="ion-text-wrap">Guidance on income tax deductions</ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-button  fill="solid" shape="round" color="secondary" class="w-full pt-3">
+          <p class="font-bold py-5">Sponsor</ion-button>
+      </ion-card-content>
+    </ion-card>
+    </div> -->
+
+    <div>
+    <ion-card *ngFor="let package of packages">
+      <ion-card-header>
+        <ion-card-title class="text-3xl">{{package.prize}}</ion-card-title>
+        <ion-card-subtitle class="text-xl">{{package.title}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item lines="none">
+            <ion-thumbnail slot="start">
+              <ion-icon name="checkbox-outline" class="text-2xl mt-4" color="primary"></ion-icon>
+            </ion-thumbnail>
+            <ion-label class="ion-text-wrap">{{package.desc1}}</ion-label>
+          </ion-item>
+    
+          <ion-item lines="none">
+            <ion-thumbnail slot="start">
+              <ion-icon name="checkbox-outline" class="text-2xl mt-4" color="primary"></ion-icon>
+            </ion-thumbnail>
+            <ion-label class="ion-text-wrap">{{package.desc2}}</ion-label>
+          </ion-item>
+    
+          <ion-item lines="none">
+            <ion-thumbnail slot="start">
+              <ion-icon name="checkbox-outline" class="text-2xl mt-4" color="primary"></ion-icon>
+            </ion-thumbnail>
+            <ion-label class="ion-text-wrap">{{package.desc3}}</ion-label>
+          </ion-item>
+    
+          <ion-item lines="none">
+            <ion-thumbnail slot="start">
+              <ion-icon name="checkbox-outline" class="text-2xl mt-4" color="primary"></ion-icon>
+            </ion-thumbnail>
+            <ion-label class="ion-text-wrap">{{package.desc4}}</ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-button [href]="package.path"  fill="solid" shape="round" color="secondary" class="w-full pt-3">
+          <p class="font-bold py-5">Sponsor</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>

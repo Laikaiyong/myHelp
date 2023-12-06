@@ -1,24 +1,8 @@
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home" href="/home">
-      <ion-icon aria-hidden="true" name="home"></ion-icon>
-      Home
-    </ion-tab-button>
-    <ion-tab-button tab="learn" href="/learn">
-      <ion-icon aria-hidden="true" name="book"></ion-icon>
-      Learn
-    </ion-tab-button>
-    <ion-tab-button tab="apply" href="/apply">
-      <ion-icon aria-hidden="true" name="bookmarks"></ion-icon>
-      Apply
-    </ion-tab-button>
-    <ion-tab-button tab="jobs" href="/jobs">
-      <ion-icon aria-hidden="true" name="briefcase"></ion-icon>
-      Jobs
-    </ion-tab-button>
-    <ion-tab-button tab="profile" ref="/profile">
-      <ion-icon aria-hidden="true" name="person-circle"></ion-icon>
-      Profile
+    <ion-tab-button *ngFor="let tab of tabs[role]" tab="{{tab!.name}}" href="{{tab!.path}}">
+      <ion-icon aria-hidden="true" name="{{tab!.icon}}"></ion-icon>
+      {{tab!.title}}
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>

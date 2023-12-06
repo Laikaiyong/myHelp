@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/sponsor"></ion-back-button>
+    </ion-buttons>
+    Sponsorship
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div ng-controller="ctrl">
+        <div [ngSwitch]="data.step">
+        <div *ngSwitchCase="1">
+            <!-- <ion-button class="px-5 text-lg py-3" shape="round" *ngFor="let item of [].constructor(totalSteps); let i = index" [color]="{'primary': data.step === 1}">{{data.step}}</ion-button> -->
+            <ion-button class="px-5 text-lg py-3" shape="round" *ngFor="let item of [1, 2]; let i = index"  [color]="{'primary': data.step === 1}">{{data.step}}</ion-button>
+            <div class="px-4">
+                <h3>You are sponsoring for</h3>
+                <ion-card class="px-2 border-2 border-solid border-slate-300">
+                  <ion-card-header>
+                    <div class="flex items-center py-2">
+                      <ion-icon name="cash-outline" size="large"></ion-icon>
+                      <ion-card-subtitle class="uppercase pl-1">Sponsorship</ion-card-subtitle>
+                    </div>
+                      <ion-card-title class="normal-case">Empowerment Partner</ion-card-title>
+                      <ion-card-subtitle>Packages</ion-card-subtitle>
+                  </ion-card-header>
+                </ion-card>
+              </div>
+              <ion-list>
+                <ion-item>
+                  <ion-label>
+                    <p class="uppercase">Company Name</p>
+                    <h2>Maxis Broadband Sdn Bhd</h2></ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label>
+                      <p class="uppercase">Company Number</p>
+                      <h2>001101-X</h2></ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>
+                      <p class="uppercase">Email Address</p>
+                      <h2>contact&#64;maxis.com.my</h2></ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>
+                      <p class="uppercase">Phone Number</p>
+                      <h2>+603-1234 4567</h2></ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>
+                      <p class="uppercase">Company Type</p>
+                      <h2>Private Owned</h2></ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>
+                      <p class="uppercase">Industry</p>
+                      <h2>Telecommunications</h2></ion-label>
+                  </ion-item>
+              </ion-list>
+              <ion-button (click)="nextStep()" color="secondary" shape="round" type="button" class="h-14 w-full">Next Section</ion-button>
+              <ion-button color="secondary" shape="round" fill="outline" class="h-14 w-full">Save Draft</ion-button>
+         </div>
+        <div *ngSwitchCase="2">
+          <input id="value2" type="number" placeholder="Value2" ng-model="data.form.value2"/>
+          <ion-button (click)="submit()">Submit</ion-button>
+        </div>
+      
+        </div>
+    </div>
+</ion-content>

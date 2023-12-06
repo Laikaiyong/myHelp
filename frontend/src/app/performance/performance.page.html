@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Performance 🔍</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+  
+    <ion-segment
+    mode="md"
+    [(ngModel)]="selectedSegment"
+    value="Grant"
+    >
+    <ion-segment-button *ngFor="let item of segmentList; let i = index"
+      [value]="item"
+      (click)="_segmentSelected(i)"
+      ><ion-label>{{item}}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div [ngSwitch]="selectedSegment">
+    <div *ngSwitchCase="'Community'">
+        <app-community></app-community>
+    </div>
+    
+    <div *ngSwitchCase="'Predictions'">
+        <app-predictions></app-predictions>
+    </div>
+  </div>
+</ion-content>
+
+

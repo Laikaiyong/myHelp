@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.scss'],
 })
 export class CoursesComponent  implements OnInit {
+  constructor() {}
 
   filters = [
     "Finance",
@@ -17,12 +17,13 @@ export class CoursesComponent  implements OnInit {
     {
       image: "../assets/images/courses/financial-planning.svg",
       title: "Financial Planning 101",
-      desc: "Finance | 10 hours"
+      desc: "Finance | 10 hours",
     },
     {
       image: "../assets/images/courses/not-broke.svg",
       title: "Not Going Broke",
-      desc: "Finance | 10 hours"
+      desc: "Finance | 10 hours",
+      path: "/tabs/learn/course"
     },
     {
       image: "../assets/images/courses/machine-learning.svg",
@@ -49,8 +50,8 @@ export class CoursesComponent  implements OnInit {
     },
   ]
 
-  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
 }

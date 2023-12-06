@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/config/auth.guard';
 
 const routes: Routes = [
     {
@@ -26,7 +27,8 @@ const routes: Routes = [
       },
       {
         path: 'training',
-        loadComponent: () => import('./training/training.page').then( m => m.TrainingPage)
+        loadComponent: () => import('./training/training.page').then( m => m.TrainingPage),
+        canActivate: [AuthGuard]
       },
       {
         path: 'application',

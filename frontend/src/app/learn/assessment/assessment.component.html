@@ -29,7 +29,7 @@
 
 <ion-title class="mt-8">Assessments Based on Courses You Take</ion-title>
 <div class="ml-4 mt-4 flex">
-  <ion-card *ngFor="let course of assessment">
+  <ion-card *ngFor="let course of assessment" [href]="course.path">
     <img width="250" [alt]="course.title" [src]="course.image" />
     <ion-card-header>
       <ion-card-title text-wrap>{{course.title}}</ion-card-title>
