@@ -24,6 +24,8 @@ import { AuthGuard } from './auth/config/auth.guard';
 
 import { HighchartsChartModule } from 'highcharts-angular';
 
+import { MarkdownModule } from 'ngx-markdown';
+
 register();
 
 @NgModule({
@@ -42,6 +44,8 @@ register();
     provideStorage(() => getStorage()),
     HttpClientModule,
     HighchartsChartModule,
+    MarkdownModule.forRoot(),
+
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ScreenTrackingService, UserTrackingService, AuthGuard],
   bootstrap: [AppComponent],

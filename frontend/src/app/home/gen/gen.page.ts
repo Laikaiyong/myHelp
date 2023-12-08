@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RestApiService } from 'src/app/services/rest_api.service';
+import { MarkdownModule } from 'ngx-markdown';
+
+import { LoadingController } from '@ionic/angular';
 
 // import { TextServiceClient } from "@google-ai/generativelanguage";
 // import { GoogleAuth } from "google-auth-library";
@@ -12,66 +15,48 @@ import { RestApiService } from 'src/app/services/rest_api.service';
   templateUrl: './gen.page.html',
   styleUrls: ['./gen.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [IonicModule, CommonModule, FormsModule, MarkdownModule],
 })
 export class GeneratePage {
-  generatedText: string = "";
-
-
+  inputPrompt: string = '';
+  generatedText: string = '';
+  generating: boolean = false;
 
   ionViewWillEnter() {
-    const elements = document.getElementsByTagName('ion-tab-bar') as HTMLCollectionOf<HTMLElement>;
+    const elements = document.getElementsByTagName(
+      'ion-tab-bar'
+    ) as HTMLCollectionOf<HTMLElement>;
     for (let i = 0; i < elements.length; i++) {
       elements[i].style.display = 'none';
     }
   }
 
   ionViewWillLeave() {
-      const elements = document.getElementsByTagName('ion-tab-bar') as HTMLCollectionOf<HTMLElement>;
-      for (let i = 0; i < elements.length; i++) {
-        elements[i].style.display = 'flex';
-      }
+    const elements = document.getElementsByTagName(
+      'ion-tab-bar'
+    ) as HTMLCollectionOf<HTMLElement>;
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].style.display = 'flex';
+    }
   }
-  
 
-  // generateText() {
-  //   const MODEL_NAME = "models/text-bison-001";
-  //   // const API_KEY = process.env.API_KEY;
-  //   const API_KEY = "AIzaSyAEJ5xUSlq0bw-0z5awQD2_7wrH21XQ5-0";
-
-  //   const client = new TextServiceClient({
-  //     authClient: new GoogleAuth().fromAPIKey(API_KEY),
-  //   });
-
-  //   const prompt = "Repeat after me: one, two,";
-
-  //   client
-  //     .generateText({
-  //       model: MODEL_NAME,
-  //       prompt: {
-  //         text: prompt,
-  //       },
-  //     })
-  //     .then((result) => {
-  //       console.log(JSON.stringify(result, null, 2));
-  //       this.generatedText = JSON.stringify(result, null, 2);
-  //     });
-  // }
-
-
-    ngOnInit() {
-    this.generateText("who are you?");
-  }
+  ngOnInit() {}
 
   generateText(promptText: string) {
-    this.apiService.generateText(promptText)
-      .subscribe(
-        response => this.generatedText = response,
-        error => console.error('Error generating text:', error)
-      );
+    this.generating = true;
+    this.apiService.generateText(promptText).subscribe({
+      next: (response) => {
+        this.generatedText = response;
+      },
+      error: (error) => {
+        console.error('Error generating text:', error);
+      },
+      complete: () => {
+        console.log('Text generation completed');
+      },
+    });
+    this.generating = false;
   }
-  
-  constructor(private apiService: RestApiService) { }
 
+  constructor(private apiService: RestApiService) {}
 }
-

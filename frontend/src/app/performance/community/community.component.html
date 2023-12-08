@@ -1,8 +1,82 @@
-<ion-content>
-  <div class="ion-padding">
-    <h1>Learning Performance</h1>
-  </div>
-</ion-content>
+<ion-item>
+  <ion-select justify="space-between" placeholder="Select ">
+    <ion-select-option value="apple">Apple</ion-select-option>
+    <ion-select-option value="banana">Banana</ion-select-option>
+    <ion-select-option value="orange">Orange</ion-select-option>
+  </ion-select>
+</ion-item>
+
+<div class="ion-padding">
+  <h1>Learning Performance</h1>
+</div>
+
+<div class="grid grid-cols-2 box-border" >
+  <ion-card class=" justify-between box-border last:col-span-2" *ngFor="let perf of performanceKPI">
+    <ion-row>
+      <ion-col col-2 class="flex align-middle justify-center">
+        <ion-icon [name]='perf.icon'  class="flex align-middle items-center justify-center text-center text-3xl mt-5" color="warning"></ion-icon>
+      </ion-col>
+      <ion-col col-8 class="mt-2 p-4">
+          <ion-card-subtitle>{{perf.title}}</ion-card-subtitle>
+        <ion-card-title class="text-md">{{perf.subtitle}}</ion-card-title>
+      </ion-col>
+  </ion-row>
+  </ion-card>
+</div>
+
+<div class="ion-padding">
+  <h1>Recruitment Performance</h1>
+</div>
+
+<div class="grid grid-cols-2 box-border">
+  <ion-card class=" justify-between box-border" *ngFor="let perf of performanceKPI1" >
+    <ion-row>
+      <ion-col col-2 class="flex align-middle justify-center">
+        <ion-icon [name]='perf.icon'  class="flex align-middle items-center justify-center text-center text-3xl mt-5" color="warning"></ion-icon>
+      </ion-col>
+      <ion-col col-8 class="mt-2 p-4">
+          <ion-card-subtitle>{{perf.title}}</ion-card-subtitle>
+        <ion-card-title class="text-md">{{perf.subtitle}}</ion-card-title>
+      </ion-col>
+  </ion-row>
+  </ion-card>
+</div>
+
+<div class="ion-padding">
+  <h1>Application Performance</h1>
+</div>
+
+<div class="grid grid-cols-2 box-border">
+  <ion-card class="last:col-span-2 justify-between box-border" *ngFor="let perf of performanceKPI2">
+    <ion-row>
+      <ion-col col-2 class="flex align-middle justify-center">
+        <ion-icon [name]='perf.icon'  class="flex align-middle items-center justify-center text-center text-3xl mt-5" color="warning"></ion-icon>
+      </ion-col>
+      <ion-col col-8 class="mt-2 p-4">
+          <ion-card-subtitle>{{perf.title}}</ion-card-subtitle>
+        <ion-card-title class="text-md">{{perf.subtitle}}</ion-card-title>
+      </ion-col>
+  </ion-row>
+  </ion-card>
+</div>
 
 
+<div class="ion-padding">
+  <h1>Overall Course Performance</h1>
+</div>
 
+<svg id="courseLineChart"></svg>
+
+
+<div class="ion-padding">
+  <h1>Overall Job Performance</h1>
+</div>
+
+<svg id="jobLineChart"></svg>
+
+
+<div class="ion-padding">
+  <h1>Overall Application Performance</h1>
+</div>
+
+<svg id="applicationLineChart"></svg>

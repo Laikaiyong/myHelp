@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PredictionsComponent } from './predictions.component';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
+import { BrowseComponent } from './browse.component';
+
+
 @NgModule({
-  exports: [PredictionsComponent],
-  declarations: [PredictionsComponent],
+  exports: [BrowseComponent],
+  declarations: [BrowseComponent],
   imports: [
     IonicModule,
     CommonModule,
-    FormsModule
+    FormsModule,
   ]
 })
-export class PredictionsModule { }
+export class BrowseModule { }

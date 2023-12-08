@@ -55,6 +55,7 @@
     "ionicons": "^7.0.0",
     "lodash-es": "^4.17.21",
     "net": "^1.0.2",
+    "ngx-markdown": "^16.0.0",
     "os": "^0.1.2",
     "path": "^0.12.7",
     "querystring": "^0.2.1",

@@ -1,11 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
-  selector: 'app-listings',
-  templateUrl: './listings.component.html',
-  styleUrls: ['./listings.component.scss'],
+  selector: 'app-listdetail',
+  templateUrl: './listdetail.page.html',
+  styleUrls: ['./listdetail.page.scss'],
+  standalone: true,
+  imports: [IonicModule, CommonModule, FormsModule]
 })
-export class ListingsComponent  implements OnInit {
+export class ListDetailPage  implements OnInit {
   filters = [
     "Technician",
     "Intern",
@@ -16,8 +21,7 @@ export class ListingsComponent  implements OnInit {
     {
       image: "../assets/images/jobs/duolingo.svg",
       title: "Technician",
-      desc: "Duolingo",
-      path: "/tabs/jobs/jobdetail"
+      desc: "Duolingo"
     },
     {
       image: "../assets/images/jobs/touchngo.svg",

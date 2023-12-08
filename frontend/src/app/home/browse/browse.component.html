@@ -1,0 +1,48 @@
+<ion-searchbar class="p-5 pb-10 mt-30" color="light"></ion-searchbar>
+
+<ion-title>Suggested Companies</ion-title>
+<div class="ml-4 mt-4">
+  <ion-chip *ngFor="let filter of filters" class="mr-4 text-md">{{ filter }}</ion-chip>
+</div>
+
+<ion-title class="mt-8">Courses Just For You</ion-title>
+<div class="ml-4 mt-4 flex">
+  <ion-card *ngFor="let course of training" [href]="course.path">
+    <img width="250" [alt]="course.title" [src]="course.image" />
+    <ion-card-header>
+      <ion-card-title text-wrap>{{course.title}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{course.desc}}
+    </ion-card-content>
+  </ion-card>
+</div>
+
+<ion-title class="mt-8">Diving Into Cyberspace</ion-title>
+<div class="ml-4 mt-4 flex">
+  <ion-card *ngFor="let course of training1">
+    <img width="250" [alt]="course.title" [src]="course.image" />
+    <ion-card-header>
+      <ion-card-title text-wrap>{{course.title}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{course.desc}}
+    </ion-card-content>
+  </ion-card>
+</div>
+
+<ion-title class="mt-8">Top Sponsored Trainings</ion-title>
+<div class="ml-4 mt-4 flex">
+  <ion-card *ngFor="let course of sponsorships">
+    <img width="250" [alt]="course.title" [src]="course.image" />
+    <ion-card-header>
+      <ion-card-title text-wrap>{{course.title}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{course.desc}}
+    </ion-card-content>
+  </ion-card>
+</div>

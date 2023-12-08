@@ -12,6 +12,19 @@ export class AssessmentComponent  implements OnInit {
     "Technology"
   ]
 
+  assessmentKPI = [
+    {
+      icon: "book-outline",
+      title: "ASSESSMENT COMPLETED",
+      subtitle: "10"
+    },
+    {
+      icon: "star-outline",
+      title: "Average Score",
+      subtitle: "85%"
+    },
+  ]
+
 
   assessment = [
     {

@@ -7,7 +7,7 @@
 
 <ion-title class="mt-8">Based on Your Profile</ion-title>
 <div class="ml-4 mt-4 flex">
-  <ion-card *ngFor="let job of jobs">
+  <ion-card *ngFor="let job of jobs" [href]="job.path">
     <img width="250" [alt]="job.title" [src]="job.image" />
     <ion-card-header>
       <ion-card-title text-wrap>{{job.title}}</ion-card-title>
@@ -32,7 +32,7 @@
 
 <ion-title class="mt-8">Jobs Where You Will Be An Excellent Match</ion-title>
 <div class="ml-4 mt-4 flex">
-  <ion-card *ngFor="let job of jobs">
+  <ion-card *ngFor="let job of jobs" [href]="job.path">
     <img width="250" [alt]="job.title" [src]="job.image" />
     <ion-card-header>
       <ion-card-title text-wrap>{{job.title}}</ion-card-title>

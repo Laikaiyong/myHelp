@@ -36,6 +36,10 @@ const routes: Routes = [
         loadChildren: () => import('../performance/performance.module').then( m => m.PerformancePageModule)
       },
       {
+        path: 'training',
+        loadChildren: () => import('../home/training/training.module').then( m => m.TrainingPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'

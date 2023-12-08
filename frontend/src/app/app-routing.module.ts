@@ -26,19 +26,6 @@ const routes: Routes = [
         loadComponent: () => import('./learn/course/course.page').then( m => m.CoursePage)
       },
       {
-        path: 'training',
-        loadComponent: () => import('./training/training.page').then( m => m.TrainingPage),
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'application',
-        loadComponent: () => import('./training/application/application.page').then( m => m.ApplicationPage)
-      },
-      {
-        path: 'trainingbrowse',
-        loadComponent: () => import('./training/trainingbrowse/trainingbrowse.page').then( m => m.TrainingbrowsePage)
-      },
-      {
         path: 'book',
         loadComponent: () => import('./book/book.page').then( m => m.BookPage)
       },

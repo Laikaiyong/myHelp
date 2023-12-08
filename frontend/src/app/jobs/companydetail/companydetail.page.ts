@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-listings',
-  templateUrl: './listings.component.html',
-  styleUrls: ['./listings.component.scss'],
+  selector: 'app-companydetail',
+  templateUrl: './companydetail.page.html',
+  styleUrls: ['./companydetail.page.scss'],
 })
-export class ListingsComponent  implements OnInit {
+export class CompanyDetailPage  implements OnInit {
+
+  slides = [
+    "", "", ""
+  ]
+
   filters = [
     "Technician",
     "Intern",
@@ -17,7 +22,6 @@ export class ListingsComponent  implements OnInit {
       image: "../assets/images/jobs/duolingo.svg",
       title: "Technician",
       desc: "Duolingo",
-      path: "/tabs/jobs/jobdetail"
     },
     {
       image: "../assets/images/jobs/touchngo.svg",

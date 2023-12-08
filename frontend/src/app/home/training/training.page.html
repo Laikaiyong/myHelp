@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Training</ion-title>
+    <ion-buttons slot="end"
+      ><ion-icon name="notifications-outline" size="large"></ion-icon
+    ></ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+  
+    <ion-segment
+    mode="md"
+    [(ngModel)]="selectedSegment"
+    value="Browse"
+    >
+    <ion-segment-button *ngFor="let item of segmentList; let i = index"
+      [value]="item"
+      (click)="_segmentSelected(i)"
+      ><ion-label>{{item}}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+</ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div [ngSwitch]="selectedSegment">
+    <div *ngSwitchCase="'Browse'">
+        <app-browse-training></app-browse-training>
+    </div>
+    
+    <div *ngSwitchCase="'Application'">
+        <app-training-application></app-training-application>
+    </div>
+  </div>
+</ion-content>
+

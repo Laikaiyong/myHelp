@@ -11,10 +11,9 @@
     <div ng-controller="ctrl">
         <div [ngSwitch]="data.step">
         <div *ngSwitchCase="1">
-            <!-- <ion-button class="px-5 text-lg py-3" shape="round" *ngFor="let item of [].constructor(totalSteps); let i = index" [color]="{'primary': data.step === 1}">{{data.step}}</ion-button> -->
-            <ion-button class="px-5 text-lg py-3" shape="round" *ngFor="let item of [1, 2]; let i = index"  [color]="{'primary': data.step === 1}">{{data.step}}</ion-button>
-            <div class="px-4">
-                <h3>You are sponsoring for</h3>
+            <ion-button class="px-5 text-lg py-3" shape="round" *ngFor="let item of [1, 2]; let i = index" [color]="item === 1 ? 'primary' : 'dark'" (click)="data.step = item">{{item}}</ion-button>
+            <div class="px-2">
+                <h3 class="px-2">You are sponsoring for</h3>
                 <ion-card class="px-2 border-2 border-solid border-slate-300">
                   <ion-card-header>
                     <div class="flex items-center py-2">
@@ -58,12 +57,43 @@
                       <h2>Telecommunications</h2></ion-label>
                   </ion-item>
               </ion-list>
+              <div class="p-4">
               <ion-button (click)="nextStep()" color="secondary" shape="round" type="button" class="h-14 w-full">Next Section</ion-button>
-              <ion-button color="secondary" shape="round" fill="outline" class="h-14 w-full">Save Draft</ion-button>
+              <ion-button color="secondary" shape="round" fill="outline" class="h-14 w-full">Previous Section</ion-button>
+              </div>
          </div>
         <div *ngSwitchCase="2">
-          <input id="value2" type="number" placeholder="Value2" ng-model="data.form.value2"/>
-          <ion-button (click)="submit()">Submit</ion-button>
+            <ion-button class="px-5 text-lg py-3" shape="round" *ngFor="let item of [1, 2]; let i = index" [color]="item === 2 ? 'primary' : 'dark'" (click)="data.step = item">{{item}}</ion-button>
+          <div>
+          <ion-list>
+            <ion-item>
+              <ion-label>
+                <p class="uppercase">Question 1</p>
+                <h2>How much would you like to sponsor?</h2>
+                <h3 class="text-lg">MYR 15,000</h3>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-label>
+                  <p class="uppercase">Question 2</p>
+                  <h2>Select payment method</h2></ion-label>
+              </ion-item>
+            <ion-item>
+              <ion-radio-group value="custom-checked">
+                <ion-radio value="custom" aria-label="Custom checkbox">
+                  Debit/Credit Card
+                </ion-radio>
+                <ion-radio value="custom-checked" aria-label="Custom checkbox that is checked">
+                Online Banking
+                </ion-radio>
+              </ion-radio-group>
+            </ion-item>
+            </ion-list>
+          </div>
+          <div class="p-4">
+          <ion-button (click)="submit()" color="secondary" shape="round" type="button" class="h-14 w-full">Proceed to Payment</ion-button>
+          <ion-button color="secondary" shape="round" fill="outline" class="h-14 w-full">Previous Section</ion-button>
+          </div>
         </div>
       
         </div>

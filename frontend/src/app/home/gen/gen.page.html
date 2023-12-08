@@ -3,14 +3,79 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs/home"></ion-back-button>
     </ion-buttons>
+
+    <ion-title>Generate</ion-title>
+
+    <ion-buttons slot="end"
+      ><ion-icon name="notifications-outline" size="large"></ion-icon
+    ></ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div *ngIf="generatedText !== ''">
-  <h3>Generated Text:</h3>
-   <div *ngFor="let text of generatedText">
-    <p>{{ text }}</p>
+  <div
+    class="flex items-center border-slate-300 border-solid border-2 px-4 py-3 rounded-lg m-3 space-x-5"
+  >
+    <ion-icon
+      name="information-circle-outline"
+      size="large"
+      color="warning"
+    ></ion-icon>
+    <p>
+      Our handy AI will generate results based on your demographic situation
+    </p>
   </div>
-</div>
+
+  <div class="m-3 py-4">
+    <h3 class="pl-3">Enter a prompt</h3>
+
+    <ion-item>
+      <ion-textarea
+        placeholder="e.g. A job application for a programmer in English"
+        [clearOnEdit]="true"
+        rows="8"
+        [(ngModel)]="inputPrompt"
+      >
+      </ion-textarea>
+    </ion-item>
+  </div>
+
+  <ion-button
+    fill="solid"
+    shape="round"
+    color="secondary"
+    expand="block"
+    class="mt-6"
+    size="large"
+    (click)="generateText(inputPrompt)"
+  >
+    Generate
+  </ion-button>
+
+  <div *ngIf="generatedText !== ''" class="ion-padding">
+    <h3>Generated Text:</h3>
+    <div *ngFor="let text of generatedText">
+      <p [innerHTML]="text | markdown"></p>
+    </div>
+  </div>
+
+  <div *ngIf="generating" class="ion-padding">
+    <ion-spinner class="w-[20vw] h-[20vh]" color="primary"></ion-spinner>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+      </ion-thumbnail>
+      <ion-label>
+        <h3>
+          <ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+        </h3>
+        <p>
+          <ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+        </p>
+        <p>
+          <ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+        </p>
+      </ion-label>
+    </ion-item>
+  </div>
 </ion-content>

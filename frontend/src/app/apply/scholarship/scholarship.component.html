@@ -32,7 +32,7 @@
 
 <ion-title class="mt-8">Top Private Scholarships</ion-title>
 <div class="ml-4 mt-4 flex whitespace-nowrap overflow-scroll">
-  <ion-card class="w-[30vw] lg:w-[20vw]" *ngFor="let scholarship of scholarships1">
+  <ion-card class="w-[30vw] lg:w-[20vw]" *ngFor="let scholarship of scholarships1" [href]="scholarship.path">
     <ion-img class="w-[29.1vw] lg:w-[19.1vw]" [alt]="scholarship.title" [src]="scholarship.image" />
     <ion-card-header>
       <ion-card-title text-wrap>{{scholarship.title}}</ion-card-title>

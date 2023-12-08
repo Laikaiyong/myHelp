@@ -1,11 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
-  selector: 'app-scholarship',
-  templateUrl: './scholarship.component.html',
-  styleUrls: ['./scholarship.component.scss'],
+  selector: 'app-scholarship-details',
+  templateUrl: './scholarship-details.page.html',
+  styleUrls: ['./scholarship-details.page.scss'],
+  standalone: true,
+  imports: [IonicModule, CommonModule, FormsModule],
 })
-export class ScholarshipComponent  implements OnInit {
+export class ScholarshipDetailsComponent  implements OnInit {
   cards = [
     {
       image: "../assets/images/apply/graduate.svg",
@@ -44,8 +49,7 @@ export class ScholarshipComponent  implements OnInit {
     {
       image: "../assets/images/scholarship/maxis.svg",
       title: "Maxis Women in Tech Scholarship",
-      desc: "Maxis",
-      path: "/tabs/apply/scholarshipdetails"
+      desc: "Maxis"
     },
     {
       image: "../assets/images/scholarship/ytl.svg",
