@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-grant',
-  templateUrl: './grant.component.html',
-  styleUrls: ['./grant.component.scss'],
+  selector: 'app-library',
+  templateUrl: './library.component.html',
+  // styleUrls: ['./library.component.scss'],
 })
-export class GrantComponent  implements OnInit {
+export class LibraryComponent  implements OnInit {
   cards = [
     {
       image: "../assets/images/apply/digital.svg",

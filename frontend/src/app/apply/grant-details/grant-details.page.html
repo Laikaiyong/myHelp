@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/apply"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Scholarship
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<div class="flex space-x-10 w-full">
+  <ion-img
+    class="w-52"
+    src="../../../assets/images/scholarship/maxis.svg"
+  ></ion-img>
+  <div>
+    <h2 class="text-3xl w-50%">Maxis Women in Tech Scholarship</h2>
+    <p class="text-gray-500">Maxis</p>
+  </div>
+</div>
+  <div
+    class="flex items-center border-slate-300 border-solid border-2 px-4 py-3 rounded-lg m-3 space-x-5"
+  >
+    <ion-icon
+      name="book-outline"
+      size="large"
+      color="warning"
+    ></ion-icon>
+    <p>
+      Your application will be reviewed by the company once submitted
+    </p>
+  </div>
+
+  <div class="flex">
+    <ion-card class="w-full rounded-xl">
+      <ion-card-header class="flex flex-row space-x-5">
+        <ion-icon name="calendar-outline" size="large"></ion-icon>
+        <div>
+          <ion-card-subtitle class="uppercase"
+            >SCHOLARSHIP AMOUNT</ion-card-subtitle
+          >
+          <ion-card-title class="">Up to RM 40,000 / year</ion-card-title>
+        </div>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="w-full rounded-xl">
+      <ion-card-header class="flex flex-row space-x-5">
+        <ion-icon name="stats-chart-outline" size="large"></ion-icon>
+        <div>
+          <ion-card-subtitle class="uppercase">SCHOLARSHIP DURATION</ion-card-subtitle>
+          <ion-card-title class="">Depending on your academic year</ion-card-title>
+        </div>
+      </ion-card-header>
+    </ion-card>
+  </div>
+
+  <ion-card class="w-full rounded-xl mb-4">
+    <ion-card-content class="space-y-3">
+      <h3 class="uppercase">ABOUT THE SCHOLARSHIP</h3>
+      <p>
+        Are you looking to boost your tech potential in an
+        inclusive and diverse workforce? This scholarship is
+        aimed at celebrating and supporting young women with
+        big ambitions for careers in science, technology,
+        engineering and mathematics (STEM). We want to enable
+        young women from all backgrounds to become leaders in
+        the different tech fields including computer science,
+        engineering and technical studies.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="w-full rounded-xl mb-4">
+    <ion-card-content class="space-y-3">
+      <h3 class="uppercase">WHO IS ELIGIBLE?</h3>
+      <p>
+        This scholarship is open to outstanding Malaysian women
+        intending to pursue their undergraduate studies in the
+        following fields of study:
+
+        1.Engineering (Network/Telecommunication/Software/Mechanical/Electrical/Electronic)
+        2.Computer Science
+        3.Data Science/Actuarial Science
+        4.Mathematics/Statistics/Applied Sciences
+      </p>
+    </ion-card-content>
+  </ion-card>
+  
+  <hr class="border-b-2" />
+  <ion-button fill="solid" shape="round" color="secondary" class="w-full pt-3">
+    <p class="font-bold py-5">Apply Now</p>
+  </ion-button>

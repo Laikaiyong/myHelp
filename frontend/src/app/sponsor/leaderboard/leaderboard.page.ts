@@ -35,7 +35,7 @@ export class LeaderboardPage implements OnInit {
       badge: 7,
     },
     {
-      title: "IBM",
+      title: "IBM Corporation",
       subtitle: "700,000 points",
       badge: 8,
     },
