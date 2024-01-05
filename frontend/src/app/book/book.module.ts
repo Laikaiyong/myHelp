@@ -6,6 +6,8 @@ import { BookPage } from './book.page';
 
 import { BookPageRoutingModule } from './book-routing.module';
 import { LibraryModule } from './library/library.module';
+import { DeliveryModule } from './delivery/delivery.module';
+import { CartModule } from './cart/cart.module';
 
 @NgModule({
   imports: [
@@ -13,7 +15,9 @@ import { LibraryModule } from './library/library.module';
     CommonModule,
     FormsModule,
     BookPageRoutingModule,
-    LibraryModule
+    LibraryModule,
+    DeliveryModule,
+    CartModule
   ],
   declarations: [BookPage]
 })

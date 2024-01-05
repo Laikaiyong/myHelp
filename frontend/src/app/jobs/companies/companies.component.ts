@@ -38,7 +38,8 @@ export class CompaniesComponent  implements OnInit {
     {
       image: "../assets/images/jobs/99mart.svg",
       title: "99 Speedmart",
-      desc: "Retail"
+      desc: "Retail",
+      path: "/tabs/jobs/companydetail"
     },
     {
       image: "../assets/images/jobs/giant.svg",

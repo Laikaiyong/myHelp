@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DeliveryComponent } from './delivery.component';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { ListDetailPage } from './listdetail.page';
+
 
 @NgModule({
-  exports: [ListDetailPage],
-  declarations: [ListDetailPage],
+  exports: [DeliveryComponent],
+  declarations: [DeliveryComponent],
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
   ]
 })
-export class ListingsModule { }
+export class DeliveryModule { }

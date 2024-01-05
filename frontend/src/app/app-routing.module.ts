@@ -30,14 +30,6 @@ const routes: Routes = [
         loadComponent: () => import('./book/book.page').then( m => m.BookPage)
       },
       {
-        path: 'cart',
-        loadComponent: () => import('./book/cart/cart.page').then( m => m.CartPage)
-      },
-      {
-        path: 'delivery',
-        loadComponent: () => import('./book/delivery/delivery.page').then( m => m.DeliveryPage)
-      },
-      {
         path: 'faq',
         loadComponent: () => import('./faq/faq.page').then( m => m.FaqPage)
       },

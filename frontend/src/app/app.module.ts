@@ -26,6 +26,9 @@ import { HighchartsChartModule } from 'highcharts-angular';
 
 import { MarkdownModule } from 'ngx-markdown';
 
+import { GoogleMapsModule } from '@angular/google-maps'
+
+
 register();
 
 @NgModule({

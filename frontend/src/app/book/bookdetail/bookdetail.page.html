@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/book"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<div class="flex space-x-10 w-full">
+  <ion-img
+    class="w-52"
+    src="../../../assets/images/books/transition-technology.svg"
+  ></ion-img>
+  <div>
+    <h2 class="text-3xl w-50%">Transitioning to Technology</h2>
+    <p class="text-gray-500">Technology</p>
+  </div>
+</div>
+  <div
+    class="flex items-center border-slate-300 border-solid border-2 px-4 py-3 rounded-lg m-3 space-x-5"
+  >
+    <ion-icon
+      name="book-outline"
+      size="large"
+      color="warning"
+    ></ion-icon>
+    <p>
+      Only one book can be added per person
+    </p>
+  </div>
+
+  <div class="flex">
+    <ion-card class="w-full rounded-xl">
+      <ion-card-header class="flex flex-row space-x-5">
+        <ion-icon name="bag-outline" size="large"></ion-icon>
+        <div>
+          <ion-card-subtitle class="uppercase"
+            >SPONSORED <Body></Body></ion-card-subtitle
+          >
+          <ion-card-title class="">Popular Bookstore</ion-card-title>
+        </div>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="w-full rounded-xl">
+      <ion-card-header class="flex flex-row space-x-5">
+        <ion-icon name="calendar-outline" size="large"></ion-icon>
+        <div>
+          <ion-card-subtitle class="uppercase">PUBLISH YEAR</ion-card-subtitle>
+          <ion-card-title class="">2018</ion-card-title>
+        </div>
+      </ion-card-header>
+    </ion-card>
+  </div>
+
+  <div class="flex">
+    <ion-card class="w-full rounded-xl">
+      <ion-card-header class="flex flex-row space-x-5">
+        <ion-icon name="people-outline" size="large"></ion-icon>
+        <div>
+          <ion-card-subtitle class="uppercase"
+            >AUTHOR<Body></Body></ion-card-subtitle
+          >
+          <ion-card-title class="">Benjamin J.</ion-card-title>
+        </div>
+      </ion-card-header>
+    </ion-card>
+    <ion-card class="w-full rounded-xl">
+      <ion-card-header class="flex flex-row space-x-5">
+        <ion-icon name="book-outline" size="large"></ion-icon>
+        <div>
+          <ion-card-subtitle class="uppercase">PAGES</ion-card-subtitle>
+          <ion-card-title class="">600</ion-card-title>
+        </div>
+      </ion-card-header>
+    </ion-card>
+  </div>
+
+  <ion-card class="w-full rounded-xl mb-4">
+    <ion-card-content class="space-y-3">
+      <h3 class="uppercase">ABOUT THE BOOK</h3>
+      <p>
+      Technological change does not happen in a vacuum;
+      decisions about which technologies to develop, fund, 
+      market, and use engage ideas about values as well as 
+      calculations of costs and benefits. In order to influence 
+      the development of technology for the better, we must first 
+      understand how technology and society are inextricably 
+      bound together. These writings--by thinkers ranging from 
+      Bruno Latour to Francis Fukuyama--help us do just that, 
+      examining how people shape technology and how technology 
+      shapes people. This second edition updates the original significantly, 
+      offering twenty-one new essays along with fifteen from 
+      the first edition.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <hr class="border-b-2" />
+  <ion-button fill="solid" shape="round" color="secondary" class="w-full pt-3">
+    <p class="font-bold py-5">Add to Cart</p>
+  </ion-button>

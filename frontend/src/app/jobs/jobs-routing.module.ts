@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { JobsPage } from './jobs.page';
 import { ListDetailPage } from './jobdetail/listdetail.page';
+import { CompanyDetailPage } from './companydetail/companydetail.page';
 
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'jobdetail',
     component: ListDetailPage
+  },
+  {
+    path: 'companydetail',
+    component: CompanyDetailPage
   },
 ];
 

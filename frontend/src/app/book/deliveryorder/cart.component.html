@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/book"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card class="px-2 py-1 border-2 border-solid border-slate-300">
+  <ion-card-header>
+    <div class="flex items-center py-2">
+      <ion-icon name="send-outline" size="large"></ion-icon>
+      <ion-card-subtitle class="uppercase">Delivery #0004</ion-card-subtitle>
+    </div>
+    <div class="flex justify-between">
+      <div>
+      <ion-card-title class="normal-case">J&T Express</ion-card-title>
+      <ion-card-subtitle>ABC101010</ion-card-subtitle>
+      </div>
+      <ion-badge slot="end" color="warning" class="px-2 py-0 text-lg text-white">Out for Delivery</ion-badge>
+    </div>
+  </ion-card-header>
+</ion-card>
+
+<div>
+  <ion-card>
+    <ion-card-header>
+      <ion-thumbnail slot="start">
+        <img [src]="../assets/images/books/transition-technology.svg">
+      </ion-thumbnail>
+      <ion-card-title>Transitioning to Technology</ion-card-title>
+      <ion-card-subtitle>Technology</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+  </div>
+
+<div>
+<ion-button color="secondary" shape="round" type="submit" class="h-14">View Delivery Location</ion-button>
+<ion-button color="secondary" shape="round" type="submit" class="h-14">Contact Courier</ion-button>
+</div>    

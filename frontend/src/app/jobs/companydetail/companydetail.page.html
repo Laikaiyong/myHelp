@@ -4,11 +4,20 @@
       <ion-back-button defaultHref="/tabs/jobs"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
-  Companies
 </ion-header>
 
+<div class="flex space-x-10 w-full">
+  <ion-img
+    class="w-52"
+    src="../assets/images/jobs/99mart.svg"
+  ></ion-img>
+  <div>
+    <h2 class="text-3xl w-50%">99 Speedmart</h2>
+    <p class="text-gray-500">Retail</p>
+  </div>
+</div>
 <ion-card class="w-full rounded-xl mb-4">
-  <ion-card-content class="space-y-3">
+  <ion-card-content class="space-y-3 h-[60vh]">
     <h3 class="uppercase">OUR OFFICE</h3>
     <swiper-container slides-per-view="1" pagination="true">
       <swiper-slide *ngFor="let slide of slides">

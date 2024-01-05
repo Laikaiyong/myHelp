@@ -6,56 +6,47 @@ import { Component, OnInit } from '@angular/core';
   // styleUrls: ['./library.component.scss'],
 })
 export class LibraryComponent  implements OnInit {
-  cards = [
-    {
-      image: "../assets/images/apply/digital.svg",
-      title: "Digital"
-    },
-    {
-      image: "../assets/images/apply/investment.svg",
-      title: "Investment"
-    },
-    {
-      image: "../assets/images/apply/human-resource.svg",
-      title: "Human Resource"
-    }
+
+  filters = [
+    "Finance",
+    "Technology",
+    "Design"
   ]
 
-
-  grants = [
+  books = [
     {
-      image: "../assets/images/grant/digital-content.svg",
-      title: "Digital Content Grant",
-      desc: "MDEC | Digital"
+      image: "../../assets/images/books/manage-finance.svg",
+      title: "How to Manage Your Finance",
+      desc: "Finance"
     },
     {
-      image: "../assets/images/grant/x-post.svg",
-      title: "Malaysia Digital X-Port Grant",
-      desc: "MDEC | Digital",
-      path: "/tabs/apply/grantdetails"
+      image: "../../assets/images/books/cash.svg",
+      title: "Cash Cash Cash",
+      desc: "Finance",
     },
     {
-      image: "../assets/images/grant/catalyst.svg",
-      title: "Malaysia Digital Catalyst Grant",
-      desc: "MDEC | Digital"
+      image: "../../assets/images/books/finance-binance.svg",
+      title: "Finance Binance",
+      desc: "Finance"
     },
   ]
-
-  grants1 = [
+  
+  books1 = [
     {
-      image: "../assets/images/grant/domestic.svg",
-      title: "Domestic Investment Strategic Fund",
-      desc: "MIDA | Investment"
+      image: "../../assets/images/books/transition-technology.svg",
+      title: "Transitioning to Technology",
+      desc: "Technology",
+      path: "/tabs/book/bookdetail"
     },
     {
-      image: "../assets/images/grant/industry4wrd1.svg",
-      title: "Industry4WRD Intervention Fund",
-      desc: "MIDA | Investment"
+      image: "../../assets/images/books/dummies.svg",
+      title: "Programming for Dummies",
+      desc: "Technology"
     },
     {
-      image: "../assets/images/grant/industry4wrd2.svg",
-      title: "Industry4WRD DISF",
-      desc: "MIDA | Investment"
+      image: "../../assets/images/books/cannot-programming.svg",
+      title: "I can't do Programming",
+      desc: "Technology"
     },
   ]
 

@@ -21,7 +21,8 @@ export class PredictionsComponent {
 
   ngOnInit() {
     // this.createD3();
-    this.createLineChart();
+    // this.createLineChart();
+    this.renderJupyter();
   }
 
 
@@ -250,4 +251,12 @@ export class PredictionsComponent {
         d3.select(this).transition().duration(duration).attr("r", circleRadius);
       });
   }
+
+  private async renderJupyter()  {
+    const response = await fetch('../../assets/models/Poverty_Predictor.html');
+    const text = await response.text();
+    var x = document.getElementById('prediction');
+    x!.innerHTML = text;
+
+  };
 }

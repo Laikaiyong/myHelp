@@ -29,7 +29,7 @@
 
 <ion-title class="mt-8">Popular Companies</ion-title>
 <div class="ml-4 mt-4 flex">
-  <ion-card *ngFor="let company of companies1">
+  <ion-card *ngFor="let company of companies1" [href]="company.path">
     <img width="250" [alt]="company.title" [src]="company.image" />
     <ion-card-header>
       <ion-card-title text-wrap>{{company.title}}</ion-card-title>

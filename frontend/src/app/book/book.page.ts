@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { LibraryComponent } from './library/library.component';
+import { CartComponent } from './cart/cart.component';
+import { DeliveryComponent } from './delivery/delivery.component';
 // import { GrantComponent } from './book/book.component';
 // import { ScholarshipComponent } from './scholarship/scholarship.component';
 // import { ApplicationComponent } from './application/application.component';
@@ -26,12 +28,12 @@ export class BookPage {
         elements[i].style.display = 'flex';
       }
   }
-  
+
   segmentList: Array<string> = ["Library", "Cart", "Delivery"];
   selectedSegment: string = this.segmentList[0];
 
   slides = [
-    LibraryComponent, LibraryComponent, LibraryComponent
+    LibraryComponent, CartComponent, DeliveryComponent
   ]
 
   _segmentSelected(index: number) {

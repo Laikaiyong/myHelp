@@ -8,7 +8,6 @@ import { JobsPageRoutingModule } from './jobs-routing.module';
 import { ListingsModule } from './listings/listings.module';
 import { CompaniesModule } from './companies/companies.module';
 import { ApplicationModule } from './application/application.module';
-
 @NgModule({
   imports: [
     IonicModule,

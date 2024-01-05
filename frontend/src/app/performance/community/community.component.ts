@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Chart} from 'angular-highcharts';
 import * as d3 from "d3";
+import { parse } from 'node-html-parser';
 
 interface Data {
   date: Date | null;
@@ -21,10 +22,10 @@ export class CommunityComponent  implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.createCourseLineChart();
-    this.createJobLineChart();
-    this.createApplicationLineChart();
-
+    // this.createCourseLineChart();
+    // this.createJobLineChart();
+    // this.createApplicationLineChart();
+    this.renderJupyter();
   }
 
   performanceKPI = [
@@ -754,9 +755,18 @@ private createApplicationLineChart() {
   }
 
 
+  private async renderJupyter()  {
+    const response = await fetch('../../assets/models/Malaysia_Poverty_Heatmap.html');
+    const text = await response.text();
+    var x = document.getElementById('heatmap');
+    x!.innerHTML = text;
 
+    const response1 = await fetch('../../assets/models/Malaysia_Poverty_Indicator_Correlation_aka_Causes_of_Poverty.html');
+    const text1 = await response1.text();
+    var y = document.getElementById('correlation');
+    y!.innerHTML = text1;
 
-
+  };
 
 
 

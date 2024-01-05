@@ -1,0 +1,42 @@
+<ion-searchbar class="p-5 pb-10 mt-30" color="light"></ion-searchbar>
+
+<div class="mt-10 px-5 pt-2">
+  <h2>Ongoing Deliveries</h2>
+  <ion-card class="px-2 py-1 border-2 border-solid border-slate-300" *ngFor="let delivery of deliveries" [href]="delivery.path">
+    <ion-card-header>
+      <div class="flex items-center py-2">
+        <ion-icon name="send-outline" size="large"></ion-icon>
+        <ion-card-subtitle class="uppercase">{{delivery.serial}}</ion-card-subtitle>
+      </div>
+      <div class="flex justify-between">
+        <div>
+        <ion-card-title class="normal-case">{{delivery.courier}}</ion-card-title>
+        <ion-card-subtitle>{{delivery.code}}</ion-card-subtitle>
+        </div>
+        <ion-badge slot="end" color="warning" class="px-2 py-0 text-lg text-white">{{delivery.status}}</ion-badge>
+      </div>
+    </ion-card-header>
+  </ion-card>
+</div>
+
+<div class="mt-10 px-5 pt-2">
+  <h2>Completed Deliveries</h2>
+  <ion-card class="px-2 py-1 border-2 border-solid border-slate-300" *ngFor="let delivery of deliveries1">
+    <ion-card-header>
+      <div class="flex items-center py-2">
+        <ion-icon name="send-outline" size="large"></ion-icon>
+        <ion-card-subtitle class="uppercase">{{delivery.serial}}</ion-card-subtitle>
+      </div>
+      <div class="flex justify-between">
+        <div>
+        <ion-card-title class="normal-case">{{delivery.courier}}</ion-card-title>
+        <ion-card-subtitle>{{delivery.code}}</ion-card-subtitle>
+        </div>
+        <ion-badge slot="end" color="warning" class="px-2 py-0 text-lg text-white">{{delivery.status}}</ion-badge>
+      </div>
+    </ion-card-header>
+  </ion-card>
+</div>
+
+
+
