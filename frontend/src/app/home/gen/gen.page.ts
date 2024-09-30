@@ -22,6 +22,7 @@ export class GeneratePage {
   generatedText: string = '';
   generating: boolean = false;
 
+
   ionViewWillEnter() {
     const elements = document.getElementsByTagName(
       'ion-tab-bar'
@@ -42,8 +43,13 @@ export class GeneratePage {
 
   ngOnInit() {}
 
-  generateText(promptText: string) {
+  async generateText(promptText: string) {
     this.generating = true;
+    // const loading = await this.loadingController.create({
+    //   message: `Generaing...`,
+    // });
+    // await loading.present();
+
     this.apiService.generateText(promptText).subscribe({
       next: (response) => {
         this.generatedText = response;
@@ -53,10 +59,11 @@ export class GeneratePage {
       },
       complete: () => {
         console.log('Text generation completed');
+        this.generating = false;
+        // loading.dismiss();
       },
     });
-    this.generating = false;
   }
 
-  constructor(private apiService: RestApiService) {}
+  constructor(private apiService: RestApiService, private loadingController: LoadingController) {}
 }

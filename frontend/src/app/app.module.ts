@@ -27,7 +27,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { MarkdownModule } from 'ngx-markdown';
 
 import { GoogleMapsModule } from '@angular/google-maps'
-
+import { AuthService } from './services/auth.service';
+import { AngularFireModule } from '@angular/fire/compat';
 
 register();
 
@@ -37,14 +38,15 @@ register();
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideAnalytics(() => getAnalytics()),
-    provideFirestore(() => getFirestore()),
-    provideDatabase(() => getDatabase()),
-    provideFunctions(() => getFunctions()),
-    provideMessaging(() => getMessaging()),
-    provideStorage(() => getStorage()),
+    AngularFireModule.initializeApp(environment.firebase),
+    // provideFirebaseApp(() => initializeApp(environment.firebase)),
+    // provideAuth(() => getAuth()),
+    // provideAnalytics(() => getAnalytics()),
+    // provideFirestore(() => getFirestore()),
+    // provideDatabase(() => getDatabase()),
+    // provideFunctions(() => getFunctions()),
+    // provideMessaging(() => getMessaging()),
+    // provideStorage(() => getStorage()),
     HttpClientModule,
     HighchartsChartModule,
     MarkdownModule.forRoot(),

@@ -23,8 +23,13 @@
         Your all-in-one solution to a better quality of life
       </ion-card-content>
       <div class="p-4 flex flex-col space-y-4">
-        <ion-button color="secondary" shape="round" type="button" class="h-14" href="/signup">Create An Account</ion-button>
-        <ion-button color="secondary" shape="round" fill="outline" class="h-14" href="/login">Log In</ion-button>
+        <ion-button color="secondary" shape="round" type="button" class="h-14 lg:hidden" href="/signup">Create An Account</ion-button>
+        <ion-button color="secondary" shape="round" fill="outline" class="h-14 lg:hidden" href="/login">Log In</ion-button>
+        <div class="hidden lg:flex justify-center space-x-4">
+
+          <ion-button color="secondary" shape="round" type="button" class="h-14" href="/signup">Create An Account</ion-button>
+          <ion-button color="secondary" shape="round" fill="outline" class="h-14" href="/login">Log In</ion-button>
+        </div>
       </div>
     </ion-card>
   </ion-toolbar>

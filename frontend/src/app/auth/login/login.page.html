@@ -12,44 +12,66 @@
   
         <ion-text class="ml-6">It's great to see you again</ion-text>
 
-        <!-- Email -->
-        <div class="w-full flex align-center m-10 space-x-10">
-          <ion-icon name="mail-outline" size="large" class="mt-8"></ion-icon>
-          <ion-input
-          class="w-[80vw] bg-transparent border-none"
-          label="Email"
-          labelPlacement="floating"
-          maxlength="100"
-          inputmode="email"
-          size="small"
-          errorText="Please enter a valid email"
-          type="email"
-          ></ion-input>
-        </div>
-  
-        <!-- Password -->
-        <div class="w-full flex align-center m-10 space-x-10">
-          <ion-icon name="lock-closed-outline" size="large" class="mt-8"></ion-icon>
-          <ion-input
-          class="w-[80vw] bg-transparent border-none"
-          label="Password"
-          labelPlacement="floating"
-          maxlength="100"
-          type="password"
-          size="small"
-          errorText="Please enter a valid password"
-          ></ion-input>
-        </div>
-
+        <form (ngSubmit)="login()">
+               <!-- Email -->
+               <div class="w-full flex align-center m-10 space-x-10">
+                <ion-icon name="mail-outline" size="large" class="mt-8"></ion-icon>
+                <ion-input
+                  [(ngModel)]="email"
+                  name="email"
+                  class="w-[80vw] bg-transparent border-none"
+                  label="Email"
+                  labelPlacement="floating"
+                  maxlength="100"
+                  inputmode="email"
+                  size="small"
+                  errorText="Please enter a valid email"
+                  type="email"
+                  required
+                ></ion-input>
+              </div>
+      
+                    <!-- Phone Number -->
+            <!-- <div class="w-full flex align-center m-10 space-x-10">
+              <ion-icon name="phone-portrait-outline" size="large" class="mt-8"></ion-icon>
+              <ion-input
+              class="w-[80vw] bg-transparent border-none"
+              label="Phone Number"
+              labelPlacement="floating"
+              inputmode="number"
+              size="small"
+              errorText="Please enter a valid Phone Number"
+              type="tel"
+              ></ion-input>
+            </div> -->
+      
+              <!-- Password -->
+              <div class="w-full flex align-center m-10 space-x-10">
+                <ion-icon name="lock-closed-outline" size="large" class="mt-8"></ion-icon>
+                <ion-input
+                  [(ngModel)]="password"
+                  name="password"
+                  class="w-[80vw] bg-transparent border-none"
+                  label="Password"
+                  labelPlacement="floating"
+                  maxlength="100"
+                  type="password"
+                  size="small"
+                  errorText="Please enter a valid password"
+                  required
+                ></ion-input>
+              </div>
+      
         <div class="w-full flex align-center m-10 space-x-10">
           <ion-checkbox labelPlacement="end">Remember me</ion-checkbox>
         </div>
   
         <div class="p-4 flex flex-col space-y-4 mx-auto md:w-[70vw] lg:w-[50vw]">
-          <ion-button color="secondary" shape="round" type="submit" class="h-14" href="/tabs">Login</ion-button>
+          <ion-button color="secondary" shape="round" type="submit" class="h-14">Login</ion-button>
           <ion-text class="text-center">Don't have an account?</ion-text>
           <ion-button color="secondary" shape="round" fill="outline" class="h-14" href="/signup">Create an account</ion-button>
         </div>
+        </form>
       </ion-content>
     </ion-app>
     

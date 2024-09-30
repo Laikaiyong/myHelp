@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class RestApiService {
-  private apiUrl = "https://generativelanguage.googleapis.com/v1beta2/models/text-bison-001:generateText";
+  private apiUrl = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent";
   private localApiUrl = "http://localhost:8000";
   
   constructor(private http: HttpClient) { }
@@ -17,9 +17,11 @@ export class RestApiService {
 generateText(promptText: string): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const body = {
-      prompt: { text: promptText },
-      temperature: 1.0,
-      candidateCount: 1
+      contents:[
+        {parts:[{text: promptText}]}]
+      // prompt: { text: promptText },
+      // temperature: 1.0,
+      // candidateCount: 1
     };
 
     const fullUrl = `${this.apiUrl}?key=${environment.palmApi.apiKey}`;
@@ -28,7 +30,7 @@ generateText(promptText: string): Observable<any> {
       .pipe(
         tap(_ => console.log('request made to language model')),
         map(response => {
-          return response.candidates.map((candidate:any) => candidate.output) ?? [];
+          return response.candidates.map((candidate:any) => candidate.content.parts[0].text) ?? [];
         }),
         catchError(this.handleError<any>('generateText', []))
       );

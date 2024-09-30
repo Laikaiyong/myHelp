@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../services/firebase.service';
-import { AuthService } from '../services/auth.service';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -95,11 +93,11 @@ export class HomePage implements OnInit {
     },
   ]
 
-  constructor(private firebaseService: FirebaseService) {
-    this.firebaseService.getFireStore("home-button").subscribe(res => {
-      console.log(res);
-    });
-  }
+  // constructor(private firebaseService: FirebaseService) {
+  //   // this.firebaseService.getFireStore("home-button").subscribe(res => {
+  //   //   console.log(res);
+  //   // });
+  // }
   role =  localStorage.getItem("role");
 
   onChange(value: string) {
