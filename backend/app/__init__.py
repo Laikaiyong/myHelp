@@ -1,13 +1,12 @@
 from flask import Flask, Blueprint
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+from pymongo import MongoClient
 
 import sqlite3
 
 def get_db_connection():
-    conn = sqlite3.connect('database.db')
-    conn.row_factory = sqlite3.Row
-    return conn
+    client = MongoClient("mongodb+srv://vandyck:vandyck@myhelp.1dbal.mongodb.net/?retryWrites=true&w=majority&appName=myhelp")
+    db = client["myhelp"]
+    return db
 
 def create_app():
     app = Flask(__name__)
