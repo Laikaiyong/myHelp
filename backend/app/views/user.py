@@ -2,12 +2,18 @@ import hashlib
 from app import get_db_connection
 from app.views import blueprint
 from flask import jsonify, request, abort
+from bson import json_util
+import json
 
 @blueprint.route('/users', methods=['GET'])
 def get_posts():
     db = get_db_connection()
     users_collection = db['users']
-    users = users_collection.find()
+    users = json.loads(
+        json_util.dumps(
+            users_collection.find()
+        )
+    )
     results = [user for user in users]
     response = jsonify(results)
     response.headers.add('Access-Control-Allow-Origin', '*')
@@ -24,7 +30,11 @@ def add_user():
     db = get_db_connection()
     users_collection = db['users']
     
-    old_user = users_collection.find_one({'email': user['email']})  # Access email using dictionary syntax
+    old_user = json.loads(
+        json_util.dumps(
+            users_collection.find_one({'email': user['email']})# Access email using dictionary syntax
+        )
+    )
     if old_user:
         abort(400, 'User already created')
 

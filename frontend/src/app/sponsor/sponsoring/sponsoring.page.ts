@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { SponsorService } from 'src/app/services/sponsor.service';
 
 @Component({
   selector: 'app-sponsoring',
@@ -11,7 +12,7 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class SponsoringPage implements OnInit {
-  constructor() {}
+    constructor(private sponsor: SponsorService) {}
 
     totalSteps = 2;
 
@@ -39,8 +40,12 @@ export class SponsoringPage implements OnInit {
         }
     }
 
-  submit = function() {
-    alert('form submitted');  
+  submit = async () => {
+    this.sponsor.addSponsorPackage({
+      'sponsorshipName': 'Empowerment Partner',
+      'amount': 15000,
+      'paymentMethod': 'Oline Banking'
+    });
   }
 
   nextStep = () => {

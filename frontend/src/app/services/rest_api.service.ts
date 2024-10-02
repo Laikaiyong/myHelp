@@ -14,7 +14,7 @@ export class RestApiService {
   
   constructor(private http: HttpClient) { }
   
-generateText(promptText: string): Observable<any> {
+  generateText(promptText: string): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const body = {
       contents:[
