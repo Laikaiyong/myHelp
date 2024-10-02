@@ -41,11 +41,16 @@ export class SponsoringPage implements OnInit {
     }
 
   submit = async () => {
-    this.sponsor.addSponsorPackage({
-      'sponsorshipName': 'Empowerment Partner',
-      'amount': 15000,
-      'paymentMethod': 'Oline Banking'
-    });
+      try {
+        this.sponsor.addSponsorPackage({
+          'sponsorPackage': 'Empowerment Partner',
+          'amount': 15000,
+          'paymentMethod': 'Online Banking'
+        });
+
+      } catch (error) {
+        alert('Error occurred!');
+      }
   }
 
   nextStep = () => {

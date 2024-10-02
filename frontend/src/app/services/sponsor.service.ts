@@ -17,17 +17,26 @@ export class SponsorService {
     this.user$ = this.afAuth.authState;
   }
 
-  addSponsorPackage(sponsorData: any): Observable<any> {
+  async addSponsorPackage(sponsorData: any): Promise<void> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Accept': 'application/json',
       'Access-Control-Allow-Origin': "*"
     });
     this.user$.subscribe(event => this.userId = event!.uid);
-    return this.http.post(this.apiUrl, {
+    console.log("Adding");
+    this.http.post(this.apiUrl, {
       ...sponsorData,
-      "userId": this.userId
-    }, { headers: headers });
+      "companyId": this.userId
+    },  { headers: headers }).subscribe(
+      response => {
+        console.log('API call successful:', response);
+        alert('Success!');
+      },
+      error => {
+        console.error('API call failed:', error);
+      }
+    );
   }
 
   getSponsorshipLeaderboard(): Observable<any> {
