@@ -1,8 +1,6 @@
 from flask import Flask, Blueprint
 from pymongo import MongoClient
 
-import sqlite3
-
 def get_db_connection():
     client = MongoClient("mongodb+srv://vandyck:vandyck@myhelp.1dbal.mongodb.net/?retryWrites=true&w=majority&appName=myhelp")
     db = client["myhelp"]

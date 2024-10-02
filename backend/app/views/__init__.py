@@ -5,7 +5,7 @@ from flask import Blueprint, jsonify
 blueprint = Blueprint('views', __name__)
 
 # Route Declaration
-from app.views import user
+from app.views import user, sponsors
 
 # @blueprint.route('/test')
 # def test():

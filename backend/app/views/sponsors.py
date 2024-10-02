@@ -4,7 +4,7 @@ from app.views import blueprint
 from flask import jsonify, request, abort
 
 @blueprint.route('/sponsors', methods=['GET'])
-def get_posts():
+def get_sponsors():
     db = get_db_connection()
     users_collection = db['sponsors']
     users = users_collection.find()
@@ -15,7 +15,7 @@ def get_posts():
 
 
 @blueprint.route('/sponsors', methods=['POST'])
-def add_user():
+def add_sponsors():
     user = request.get_json()
     if not user or 'name' not in user or 'email' not in user:
         abort(400, 'Invalid user data')
