@@ -20,6 +20,7 @@ export const environment = {
   },
 
   backendApi: "https://constant-melitta-vandyck-d8ebc53d.koyeb.app/"
+  // backendApi: 'http://127.0.0.1:5000/'
 };
 
 /*

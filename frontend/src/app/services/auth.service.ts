@@ -19,10 +19,11 @@ export class AuthService {
 
   async signUp(email: string, password: string): Promise<firebase.User | null> {
     try {
-      const headers = new HttpHeaders({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*" });
+      const headers = new HttpHeaders({       'Content-Type': 'application/json',
+        'Accept': 'application/json' , 'Access-Control-Allow-Origin': "*"});
       const result = await this.afAuth.createUserWithEmailAndPassword(email, password);
       if (result.user) {
-        this.http.post(this.apiUrl, result.user,  { headers }).subscribe(
+        this.http.post(this.apiUrl, result.user,  { headers: headers }).subscribe(
           response => {
             console.log('API call successful:', response);
           },
@@ -40,10 +41,15 @@ export class AuthService {
 
   async signIn(email: string, password: string): Promise<firebase.User | null> {
     try {
-      const headers = new HttpHeaders({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*"  });
+      const headers = new HttpHeaders({       'Content-Type': 'application/json',
+        'Accept': 'application/json' , 'Access-Control-Allow-Origin': "*"  });
       const result = await this.afAuth.signInWithEmailAndPassword(email, password);
       if (result.user) {
-        this.http.post(this.apiUrl, result.user, {headers}).subscribe(
+        this.http.post(this.apiUrl, {
+          "_id": result.user.uid,
+          "email": result.user.email,
+          "name": result.user.displayName
+        },  { headers: headers }).subscribe(
           response => {
             console.log('API call successful:', response);
           },

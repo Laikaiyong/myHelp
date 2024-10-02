@@ -3,5 +3,15 @@
   "integrations": {
     "capacitor": {}
   },
-  "type": "angular-standalone"
+  "type": "angular-standalone",
+  "proxies": [
+    {
+      "path": "/*",
+      "proxyUrl": "http://127.0.0.1:5000"
+    },
+    {
+      "path": "/*",
+      "proxyUrl": "https://constant-melitta-vandyck-d8ebc53d.koyeb.app"
+    }
+  ]
 }

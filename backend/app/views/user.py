@@ -17,7 +17,8 @@ def get_posts():
 @blueprint.route('/users', methods=['POST'])
 def add_user():
     user = request.get_json()
-    if not user or 'name' not in user or 'email' not in user:
+    print(user)
+    if not user:
         abort(400, 'Invalid user data')
     
     db = get_db_connection()
