@@ -52,6 +52,7 @@ export class GeneratePage {
 
     this.apiService.generateText(promptText).subscribe({
       next: (response) => {
+        console.log(response);
         this.generatedText = response;
       },
       error: (error) => {

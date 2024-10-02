@@ -18,6 +18,8 @@ export const environment = {
   palmApi: {
     apiKey: "AIzaSyDqIg9i20d5S1dEPlo8uvr73UOaU2d5nEA"
   },
+
+  backendApi: "https://constant-melitta-vandyck-d8ebc53d.koyeb.app/"
 };
 
 /*

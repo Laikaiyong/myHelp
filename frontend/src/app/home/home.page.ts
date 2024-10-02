@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../services/firebase.service';
+
+declare const $: any;
+declare var google: any;
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -134,6 +137,37 @@ export class HomePage implements OnInit {
   // Add or remove the "dark" class on the document body
   toggleDarkTheme(shouldAdd: any) {
     document.body.classList.toggle('dark', shouldAdd);
+  }
+
+  selectedLang = "en"
+  constructor() {
+    this.loadGoogleTranslate();
+  }
+
+  changeLanguage(langCode: string) {
+    if (typeof google !== 'undefined' && google.translate) {
+      google.translate.translatePage(langCode);
+    }
+  }
+  loadGoogleTranslate() {
+    const googleTranslateScript = document.createElement('script');
+    googleTranslateScript.src =
+      '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+    googleTranslateScript.async = true;
+    googleTranslateScript.defer = true;
+    document.head.appendChild(googleTranslateScript);
+    (window as any)['googleTranslateElementInit'] =
+      this.googleTranslateElementInit.bind(this);
+  }
+
+  googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        layout: google.translate.TranslateElement.InlineLayout.VERTICAL,
+      },
+      'google_translate_element'
+    );
   }
 }
 

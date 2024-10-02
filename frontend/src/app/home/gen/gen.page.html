@@ -64,7 +64,7 @@
   <div *ngIf="generatedText.length > 0 && !generating" class="ion-padding">
     <h3>Generated Text:</h3>
     <div *ngFor="let text of generatedText">
-      <p [innerHTML]="text | markdown"></p>
+      <p>{{ text }}</p>
     </div>
   </div>
 </ion-content>
