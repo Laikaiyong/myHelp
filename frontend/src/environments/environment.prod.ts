@@ -5,7 +5,6 @@ export const environment = {
     authDomain: "flutter-frenzy.firebaseapp.com",
     databaseURL: "https://flutter-frenzy-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "flutter-frenzy",
-    locationId:"asia-southeast1",
     storageBucket: "flutter-frenzy.appspot.com",
     messagingSenderId: "90982953877",
     appId: "1:90982953877:web:114860f8e44935f7837c9c",
@@ -13,6 +12,8 @@ export const environment = {
   },
 
   palmApi: {
-    apiKey: "AIzaSyAEJ5xUSlq0bw-0z5awQD2_7wrH21XQ5-0"
-  }
+    apiKey: "AIzaSyDqIg9i20d5S1dEPlo8uvr73UOaU2d5nEA"
+  },
+
+  backendApi: "https://constant-melitta-vandyck-d8ebc53d.koyeb.app/"
 };
